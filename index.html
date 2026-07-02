@@ -303,7 +303,7 @@
   }
   .compare-before, .compare-after{position:absolute;inset:0;width:100%;height:100%;}
   .compare-after{clip-path:inset(0 50% 0 0);z-index:1;}
-  .compare-slider img{width:100%;height:100%;object-fit:cover;}
+  .compare-slider img{width:100%;height:100%;object-fit:contain;background:var(--rose-2);}
   .compare-handle{
     position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--branco);z-index:3;
     transform:translateX(-50%);pointer-events:none;
@@ -351,7 +351,7 @@
   .galeria{padding:8rem 0;background:var(--branco);width:100%;}
   .gal-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:repeat(2,300px);gap:1.2rem;}
   .gal-item{border-radius:3px;overflow:hidden;position:relative;}
-  .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease;}
+  .gal-item img{width:100%;height:100%;object-fit:contain;background:var(--rose-2);transition:transform .8s ease;}
   .gal-item:hover img{transform:scale(1.06);}
   .gal-1{grid-column:span 8;grid-row:span 2;}
   .gal-2{grid-column:span 4;grid-row:span 1;}
@@ -484,11 +484,7 @@
 
 <header id="header">
   <a href="#topo" class="logo-mark">
-    <span class="logo-svg-slot"></span>
-    <span class="logo-text">
-      <span class="l1">DRA. LUCIANA GRANADO</span>
-      <span class="l2">Odontologia Integrada</span>
-    </span>
+    <img src="images/logo-premium.png" alt="Dra. Luciana Granado" style="height: 60px; width: auto;">
   </a>
 
   <nav class="links">
@@ -512,9 +508,8 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <div class="mob-top">
-    <div class="logo-mark">
-      <span class="logo-svg-slot"></span>
-      <span class="logo-text"><span class="l1">LUCIANA GRANADO</span></span>
+      <div class="logo-mark">
+      <img src="images/logo-premium.png" alt="Dra. Luciana Granado" style="height: 50px; width: auto;">
     </div>
     <div class="mob-close" id="closeMenu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg></div>
   </div>
