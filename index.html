@@ -67,7 +67,7 @@
     -webkit-font-smoothing:antialiased;
     width:100%;
   }
-  img{max-width:100%;display:block;height:auto;width:100%;}
+  img{max-width:100%;display:block;height:auto;}
   a{text-decoration:none;color:inherit;}
   ::selection{background:var(--dourado);color:var(--preto);}
   :focus-visible{outline:2px solid var(--dourado);outline-offset:3px;}
@@ -121,10 +121,7 @@
   }
   header.hide-nav{transform:translateY(-110%);}
   .logo-mark{display:flex;align-items:center;gap:.6rem;}
-  .logo-mark svg{width:34px;height:34px;flex-shrink:0;}
-  .logo-text{font-family:var(--serif);color:var(--dourado-claro);line-height:1.1;}
-  .logo-text .l1{font-size:1rem;letter-spacing:.1em;display:block;font-weight:600;}
-  .logo-text .l2{font-size:.48rem;letter-spacing:.2em;color:#a89674;text-transform:uppercase;font-family:var(--sans);font-weight:400;}
+  .logo-mark img{height:60px;width:auto;display:block;}
   nav.links{display:flex;gap:1.6rem;}
   nav.links a{
     color:#e8ddd0;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
@@ -140,7 +137,13 @@
   .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.4rem;}
   .burger span{width:24px;height:1.5px;background:var(--dourado-claro);transition:all .3s ease;}
 
-  /* ===== HERO — full bleed capa ===== */
+  @media(max-width:1024px){
+    nav.links{display:none;}
+    .burger{display:flex;}
+    header .btn{display:none;}
+  }
+
+  /* ===== HERO ===== */
   .hero{
     position:relative;min-height:100svh;
     display:flex;align-items:flex-start;
@@ -193,7 +196,6 @@
   .credenciais strong{font-family:var(--serif);font-size:1.65rem;color:var(--dourado);display:block;font-weight:600;}
   .credenciais span{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--texto-suave);font-weight:500;}
 
-  /* barra de agendamento flutuante estilo "reserva" */
   .booking-bar{
     position:relative;z-index:3;margin-top:2.8rem;
     background:var(--branco);
@@ -262,7 +264,14 @@
   .esp-card h3{font-size:1.4rem;margin-bottom:.8rem;color:var(--texto-escuro);line-height:1.2;}
   .esp-card p{font-size:.88rem;color:var(--texto-suave);line-height:1.65;font-weight:300;}
 
-  /* ===== EXPERIENCIAS / PROCEDIMENTOS — alternado tipo "resort" ===== */
+  @media(max-width:900px){
+    .esp-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(max-width:600px){
+    .esp-grid{grid-template-columns:1fr;}
+  }
+
+  /* ===== EXPERIENCIAS ===== */
   .experiencias{padding:8rem 0;background:var(--preto);color:var(--branco);width:100%;}
   .exp-row{
     display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center;
@@ -277,12 +286,12 @@
   .exp-text h3{font-size:clamp(1.5rem,2.6vw,2.1rem);margin-bottom:1rem;color:var(--branco);}
   .exp-text p{color:#c9bda8;font-weight:300;line-height:1.75;font-size:.95rem;margin-bottom:1.4rem;}
   .exp-text a.saiba{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dourado);border-bottom:1px solid var(--dourado);padding-bottom:.3rem;}
+  
   @media(max-width:900px){
     .exp-row{grid-template-columns:1fr;gap:1.8rem;padding:2.8rem 0;}
     .exp-row:nth-of-type(even) .exp-media{order:0;}
   }
 
-  /* mosaico rápido de outros procedimentos */
   .proc-mini{margin-top:5rem;}
   .proc-mini-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
   .proc-mini-card{position:relative;overflow:hidden;border-radius:3px;aspect-ratio:1/1;}
@@ -303,7 +312,7 @@
   }
   .compare-before, .compare-after{position:absolute;inset:0;width:100%;height:100%;}
   .compare-after{clip-path:inset(0 50% 0 0);z-index:1;}
-  .compare-slider img{width:100%;height:100%;object-fit:contain;background:var(--rose-2);}
+  .compare-slider img{width:100%;height:100%;object-fit:cover;background:var(--rose-2);}
   .compare-handle{
     position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--branco);z-index:3;
     transform:translateX(-50%);pointer-events:none;
@@ -323,7 +332,7 @@
   @media(max-width:1000px){.resultados-grid{grid-template-columns:repeat(2,1fr);}}
   @media(max-width:640px){.resultados-grid{grid-template-columns:1fr;}}
 
-  /* ===== SOBRE / DOUTOR ===== */
+  /* ===== SOBRE ===== */
   .sobre{padding:8rem 0;background:var(--rose-2);width:100%;}
   .sobre-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:6rem;align-items:center;}
   .sobre-media{position:relative;}
@@ -345,13 +354,14 @@
   @media(max-width:900px){
     .sobre-grid{grid-template-columns:1fr;gap:4rem;}
     .sobre-media{max-width:500px;margin:0 auto;}
+    .sobre-badge{padding:1.5rem;min-width:140px;right:-1rem;bottom:-1rem;}
   }
 
-  /* ===== GALERIA / CLINICA ===== */
+  /* ===== GALERIA ===== */
   .galeria{padding:8rem 0;background:var(--branco);width:100%;}
   .gal-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:repeat(2,300px);gap:1.2rem;}
   .gal-item{border-radius:3px;overflow:hidden;position:relative;}
-  .gal-item img{width:100%;height:100%;object-fit:contain;background:var(--rose-2);transition:transform .8s ease;}
+  .gal-item img{width:100%;height:100%;object-fit:cover;background:var(--rose-2);transition:transform .8s ease;}
   .gal-item:hover img{transform:scale(1.06);}
   .gal-1{grid-column:span 8;grid-row:span 2;}
   .gal-2{grid-column:span 4;grid-row:span 1;}
@@ -375,7 +385,7 @@
   @media(max-width:1000px){.dep-grid{grid-template-columns:repeat(2,1fr);}}
   @media(max-width:640px){.dep-grid{grid-template-columns:1fr;}}
 
-  /* ===== CONTINUIDADE DO CUIDADO ===== */
+  /* ===== CONTINUIDADE ===== */
   .continuidade{padding:8rem 0;background:var(--branco);width:100%;}
   .cont-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:center;}
   .cont-list{margin-top:2.5rem;display:flex;flex-direction:column;gap:1.8rem;}
@@ -416,18 +426,11 @@
     .horario-box{grid-column:span 1;}
   }
 
-  /* ===== CTA FINAL ===== */
-  .cta-final{padding:10rem 0;background:var(--rose-2);text-align:center;width:100%;}
-  .cta-final .eyebrow{margin-bottom:1.8rem;justify-content:center;}
-  .cta-final h2{font-size:clamp(2.4rem,5vw,3.8rem);margin-bottom:1.8rem;max-width:800px;margin-left:auto;margin-right:auto;}
-  .cta-final p{color:var(--texto-suave);font-size:1.1rem;margin-bottom:3rem;max-width:500px;margin-left:auto;margin-right:auto;font-weight:300;}
-  .cta-buttons{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;}
-
   /* ===== FOOTER ===== */
   footer{padding:6rem 0 3rem;background:var(--preto);color:var(--branco);width:100%;}
   .foot-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:4rem;margin-bottom:5rem;}
   .foot-logo{margin-bottom:1.5rem;}
-  .foot-logo .logo-text .l1{font-size:1.3rem;}
+  .foot-logo .logo-text .l1{font-size:1.3rem;font-family:var(--serif);color:var(--dourado-claro);}
   .foot-grid p.small{color:#a89674;font-size:.88rem;line-height:1.65;max-width:280px;font-weight:300;}
   .foot-col h6{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dourado);margin-bottom:1.8rem;font-weight:600;}
   .foot-col a, .foot-col p{display:block;color:#cfc3b3;font-size:.88rem;margin-bottom:.9rem;font-weight:300;transition:color .3s ease;}
@@ -474,6 +477,7 @@
   }
   .mob-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:4rem;}
   .mob-close{width:40px;height:40px;color:var(--dourado-claro);cursor:pointer;}
+  .mob-close svg{width:100%;height:100%;}
   .mob-links{display:flex;flex-direction:column;gap:2rem;}
   .mob-link{font-family:var(--serif);font-size:2.2rem;color:var(--branco);}
   .mob-foot{margin-top:auto;padding-bottom:2rem;}
@@ -484,7 +488,7 @@
 
 <header id="header">
   <a href="#topo" class="logo-mark">
-    <img src="images/logo-premium.png" alt="Dra. Luciana Granado" style="height: 60px; width: auto;">
+    <img src="images/logo-premium.png" alt="Dra. Luciana Granado">
   </a>
 
   <nav class="links">
@@ -508,7 +512,7 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <div class="mob-top">
-      <div class="logo-mark">
+    <div class="logo-mark">
       <img src="images/logo-premium.png" alt="Dra. Luciana Granado" style="height: 50px; width: auto;">
     </div>
     <div class="mob-close" id="closeMenu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg></div>
@@ -528,7 +532,7 @@
 
 <section class="hero" id="topo">
   <div class="hero-bg">
-    <img src="images/dra-luciana-hero.jpg" alt="Dra. Luciana Granado em seu consultório">
+    <img src="images/dra-luciana-hero.jpg" alt="Dra. Luciana Granado">
   </div>
   <div class="container hero-content">
     <div class="hero-inner">
@@ -557,16 +561,15 @@
           <input type="tel" id="bkTel" placeholder="(27) 90000-0000" required>
         </div>
         <div class="booking-field">
-          <label for="bkTipo">Tipo de atendimento</label>
+          <label for="bkTipo">Atendimento</label>
           <select id="bkTipo">
             <option>Endodontia (Canal)</option>
             <option>Ortodontia (Aparelho)</option>
             <option>Implantodontia</option>
             <option>Avaliação Geral</option>
-            <option>Limpeza e Prevenção</option>
           </select>
         </div>
-        <button type="submit" class="btn solid">Verificar disponibilidade</button>
+        <button type="submit" class="btn solid">Verificar</button>
       </form>
 
       <div class="scroll-cue">
@@ -582,39 +585,39 @@
     <div class="sec-head reveal">
       <span class="eyebrow">Especialidades</span>
       <h2>Áreas de atuação</h2>
-      <p>Formação continuada e expertise em procedimentos complexos para garantir a saúde e a estética do seu sorriso.</p>
+      <p>Expertise técnica e atendimento humanizado para sua saúde bucal.</p>
     </div>
 
     <div class="esp-grid reveal">
       <div class="esp-card">
         <span class="esp-num">01</span>
         <h3>Endodontia</h3>
-        <p>Tratamento de canal com tecnologia rotatória, preservando a estrutura dental original com máximo conforto.</p>
+        <p>Tratamento de canal com tecnologia rotatória e máximo conforto.</p>
       </div>
       <div class="esp-card">
         <span class="esp-num">02</span>
         <h3>Ortodontia</h3>
-        <p>Aparelhos modernos e técnicas avançadas para alinhar seus dentes e criar um sorriso funcional e harmonioso.</p>
+        <p>Aparelhos modernos para alinhar seu sorriso de forma funcional.</p>
       </div>
       <div class="esp-card">
         <span class="esp-num">03</span>
         <h3>Implantodontia</h3>
-        <p>Reabilitação com implantes de alta qualidade e planejamento preciso para restaurar sua confiança ao sorrir.</p>
+        <p>Reabilitação com implantes de alta qualidade e precisão digital.</p>
       </div>
       <div class="esp-card">
         <span class="esp-num">04</span>
         <h3>Odontologia Integrada</h3>
-        <p>Abordagem completa que combina diferentes especialidades para oferecer soluções personalizadas para cada caso.</p>
+        <p>Soluções personalizadas combinando diferentes especialidades.</p>
       </div>
       <div class="esp-card">
         <span class="esp-num">05</span>
         <h3>Musicoterapia</h3>
-        <p>Uso terapêutico da música para reduzir a ansiedade e proporcionar um ambiente acolhedor durante o tratamento.</p>
+        <p>Ambiente acolhedor que reduz a ansiedade durante o tratamento.</p>
       </div>
       <div class="esp-card">
         <span class="esp-num">06</span>
-        <h3>Atendimento Humanizado</h3>
-        <p>Cuidado centrado no paciente, com foco no bem-estar físico e emocional em todas as etapas do atendimento.</p>
+        <h3>Humanização</h3>
+        <p>Cuidado centrado no seu bem-estar físico e emocional.</p>
       </div>
     </div>
   </div>
@@ -629,36 +632,24 @@
 
     <div class="exp-row reveal">
       <div class="exp-media">
-        <img src="images/clinica-apoio.jpg" alt="Tratamento odontológico especializado">
+        <img src="images/clinica-apoio.jpg" alt="Tratamento especializado">
       </div>
       <div class="exp-text">
         <span class="exp-tag">Endodontia</span>
         <h3>Tratamento de Canal</h3>
-        <p>Tecnologia de ponta que torna o tratamento de canal um procedimento rápido, seguro e indolor, focado na preservação do seu dente natural.</p>
+        <p>Tecnologia que torna o procedimento rápido, seguro e indolor.</p>
         <a href="https://wa.me/5527997631575" target="_blank" rel="noopener" class="saiba">Falar agora →</a>
       </div>
     </div>
 
     <div class="exp-row reveal">
       <div class="exp-media">
-        <img src="images/galeria1.jpg" alt="Ortodontia moderna">
+        <img src="images/galeria1.jpg" alt="Ortodontia">
       </div>
       <div class="exp-text">
         <span class="exp-tag">Ortodontia</span>
         <h3>Alinhamento Dental</h3>
-        <p>Correção da posição dos dentes com aparelhos modernos, buscando não apenas a estética, mas a saúde funcional de toda a arcada dentária.</p>
-        <a href="https://wa.me/5527997631575" target="_blank" rel="noopener" class="saiba">Agendar avaliação →</a>
-      </div>
-    </div>
-
-    <div class="exp-row reveal">
-      <div class="exp-media">
-        <img src="images/galeria2.jpg" alt="Implantodontia de precisão">
-      </div>
-      <div class="exp-text">
-        <span class="exp-tag">Implantodontia</span>
-        <h3>Implantes Dentários</h3>
-        <p>Recuperação da função mastigatória e da estética do sorriso através de implantes seguros e duradouros, com planejamento digital personalizado.</p>
+        <p>Correção estética e funcional com aparelhos modernos.</p>
         <a href="https://wa.me/5527997631575" target="_blank" rel="noopener" class="saiba">Agendar avaliação →</a>
       </div>
     </div>
@@ -666,11 +657,11 @@
     <div class="proc-mini reveal">
       <div class="proc-mini-grid">
         <div class="proc-mini-card">
-          <img src="images/galeria3.jpg" alt="Limpeza dental">
+          <img src="images/galeria3.jpg" alt="Limpeza">
           <span class="proc-mini-label">Limpeza</span>
         </div>
         <div class="proc-mini-card">
-          <img src="images/caso1-depois.jpg" alt="Clareamento dental">
+          <img src="images/caso1-depois.jpg" alt="Estética">
           <span class="proc-mini-label">Estética</span>
         </div>
         <div class="proc-mini-card">
@@ -691,7 +682,7 @@
     <div class="sec-head center reveal">
       <span class="eyebrow">Resultados</span>
       <h2>Antes & Depois</h2>
-      <p>Arraste o botão para comparar. Casos reais tratados pela Dra. Luciana Granado.</p>
+      <p>Casos reais tratados pela Dra. Luciana Granado.</p>
     </div>
 
     <div class="resultados-grid">
@@ -725,10 +716,9 @@
           <input type="range" min="0" max="100" value="50" class="compare-range">
         </div>
         <div class="compare-labels"><span>Antes</span><span>Depois</span></div>
-        <h3>Alinhamento do Sorriso</h3>
+        <h3>Alinhamento</h3>
       </div>
     </div>
-    <p style="text-align:center;color:var(--texto-suave);font-size:.8rem;margin-top:3rem;font-weight:300;">*Imagens de casos reais. Os resultados variam para cada paciente.</p>
   </div>
 </section>
 
@@ -747,12 +737,11 @@
       <div class="sobre-text reveal">
         <span class="eyebrow">Sobre a doutora</span>
         <h2>Especialista dedicada ao seu bem-estar.</h2>
-        <p>Dra. Luciana Granado é cirurgiã-dentista com tripla especialização: Endodontia, Ortodontia e Implantodontia. Sua prática combina o rigor técnico científico com uma abordagem profundamente humanizada.</p>
-        <p>Com experiência como professora de Anatomia e Neurofisiologia, a Dra. Luciana traz um olhar detalhado para cada procedimento. Além disso, como Musicoterapeuta oficial, integra técnicas que transformam a experiência no consultório em um momento de cuidado e tranquilidade.</p>
-        <p>Seu compromisso é oferecer uma Odontologia Integrada, onde a tecnologia de ponta e o acolhimento andam juntos para devolver não apenas a função e a estética, mas a alegria de sorrir.</p>
+        <p>Dra. Luciana Granado é cirurgiã-dentista com especialização em Endodontia, Ortodontia e Implantodontia. Sua prática combina o rigor técnico com uma abordagem humanizada.</p>
+        <p>Como Musicoterapeuta oficial, integra técnicas que transformam a experiência no consultório em um momento de cuidado e tranquilidade.</p>
         <div class="sobre-sig">
           <div>
-            <span class="name">Dra. Luciana Granado</span>
+            <span class="name">Dra. Luciana Granado</span><br>
             <span class="cro">Cirurgiã-Dentista</span>
           </div>
         </div>
@@ -768,87 +757,9 @@
       <h2>Ambiente preparado para você</h2>
     </div>
     <div class="gal-grid reveal">
-      <div class="gal-item gal-1"><img src="images/dra-luciana-hero.jpg" alt="Consultório Dra. Luciana Granado"></div>
-      <div class="gal-item gal-2"><img src="images/clinica-apoio.jpg" alt="Equipamentos modernos"></div>
-      <div class="gal-item gal-3"><img src="images/galeria1.jpg" alt="Sala de atendimento"></div>
-    </div>
-  </div>
-</section>
-
-<section class="depoimentos" id="depoimentos">
-  <div class="container">
-    <div class="sec-head center light reveal">
-      <span class="eyebrow">Depoimentos</span>
-      <h2>O que dizem nossos pacientes</h2>
-    </div>
-    <div class="dep-grid reveal">
-      <div class="dep-card">
-        <div class="dep-stars">
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        </div>
-        <p>"Tratamento de canal super tranquilo, sem dor e com explicação clara de cada etapa. A Dra. Luciana é muito profissional."</p>
-        <div class="dep-author"><span>Paciente de Endodontia</span></div>
-      </div>
-      <div class="dep-card">
-        <div class="dep-stars">
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        </div>
-        <p>"Resultado excepcional no meu aparelho, acompanhamento atencioso e ambiente muito acolhedor. Recomendo muito!"</p>
-        <div class="dep-author"><span>Paciente de Ortodontia</span></div>
-      </div>
-      <div class="dep-card">
-        <div class="dep-stars">
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        </div>
-        <p>"Tinha muito medo de dentista, mas a música e o cuidado da Dra. Luciana transformaram minha experiência. Voltarei sempre."</p>
-        <div class="dep-author"><span>Paciente Satisfeito</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="continuidade">
-  <div class="container">
-    <div class="cont-grid">
-      <div class="reveal">
-        <span class="eyebrow">Diferenciais</span>
-        <h2 style="font-size:clamp(1.9rem,3.2vw,2.6rem);margin-top:1rem;">Cuidado que continua depois da consulta.</h2>
-        <div class="cont-list">
-          <div class="cont-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg>
-            <div><strong>Retorno prioritário</strong><span>Resposta rápida para dúvidas pós-consulta e acompanhamento.</span></div>
-          </div>
-          <div class="cont-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg>
-            <div><strong>Musicoterapia no atendimento</strong><span>Ambiente planejado para reduzir o estresse e a ansiedade.</span></div>
-          </div>
-          <div class="cont-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg>
-            <div><strong>Acompanhamento pós-operatório</strong><span>Orientação próxima em cirurgias, implantes e tratamentos de canal.</span></div>
-          </div>
-          <div class="cont-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg>
-            <div><strong>Lembrete de manutenção</strong><span>Avisamos quando chega a hora da sua revisão preventiva.</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="cont-card reveal">
-        <h3>Pronto para transformar seu sorriso?</h3>
-        <p>Fale diretamente pelo WhatsApp e receba orientação da nossa equipe em Vila Velha.</p>
-        <a href="https://wa.me/5527997631575" target="_blank" rel="noopener" class="btn solid full">Chamar no WhatsApp</a>
-      </div>
+      <div class="gal-item gal-1"><img src="images/dra-luciana-hero.jpg" alt="Clínica"></div>
+      <div class="gal-item gal-2"><img src="images/clinica-apoio.jpg" alt="Clínica"></div>
+      <div class="gal-item gal-3"><img src="images/galeria1.jpg" alt="Clínica"></div>
     </div>
   </div>
 </section>
@@ -857,58 +768,32 @@
   <div class="container">
     <div class="contato-top">
       <div class="reveal">
-        <span class="eyebrow">Fale conosco</span>
+        <span class="eyebrow">Contato</span>
         <h2>Agende sua consulta</h2>
       </div>
-      <p class="reveal">Escolha o canal que preferir. Estamos prontos para orientar o próximo passo para sua saúde bucal em Vila Velha.</p>
     </div>
 
     <div class="contato-grid">
       <div class="contato-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
         <span class="lbl">WhatsApp</span>
         <a href="https://wa.me/5527997631575" target="_blank" rel="noopener">+55 27 99763-1575</a>
       </div>
       <div class="contato-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8.1 9.6a16 16 0 006 6l1.1-1.2a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg></div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8.1 9.6a16 16 0 006 6l1.1-1.2a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg></div>
         <span class="lbl">Telefone</span>
         <a href="tel:+5527997631575">+55 27 99763-1575</a>
       </div>
       <div class="contato-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg></div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg></div>
         <span class="lbl">E-mail</span>
         <a href="mailto:contato@dralucianagranado.com.br">contato@dralucianagranado.com.br</a>
       </div>
       <div class="contato-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-7-11a7 7 0 0114 0c0 6.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.6-7-11a7 7 0 0114 0c0 6.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
         <span class="lbl">Local</span>
-        <span class="val">Av. Henrique Moscoso, 1069 — Vila Velha, ES</span>
+        <span class="val">Vila Velha, ES</span>
       </div>
-
-      <div class="horario-box reveal">
-        <div>
-          <span class="lbl">Horário</span>
-          <strong>Seg a Sex · 08:00 – 18:00</strong>
-        </div>
-        <span class="urgencia">Atendimento Humanizado</span>
-      </div>
-    </div>
-
-    <div class="mapa-wrap reveal">
-      <a class="mapa-abrir" href="https://www.google.com/maps/search/?api=1&query=Avenida+Henrique+Moscoso,+1069+-+Centro,+Vila+Velha+-+ES,+29100-021" target="_blank" rel="noopener">Abrir Maps</a>
-      <iframe src="https://www.google.com/maps?q=Avenida+Henrique+Moscoso,+1069+-+Centro,+Vila+Velha+-+ES,+29100-021,+Brasil&output=embed" loading="lazy" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" title="Mapa da clínica"></iframe>
-    </div>
-  </div>
-</section>
-
-<section class="cta-final">
-  <div class="container">
-    <span class="eyebrow reveal">Seu sorriso merece atenção</span>
-    <h2 class="reveal">Cuidado e excelência, sempre disponíveis.</h2>
-    <p class="reveal">Entre em contato e agende uma avaliação com a Dra. Luciana Granado em Vila Velha.</p>
-    <div class="cta-buttons">
-      <a href="https://wa.me/5527997631575" target="_blank" rel="noopener" class="btn solid reveal">WhatsApp</a>
-      <a href="tel:+5527997631575" class="btn on-light reveal">Ligar</a>
     </div>
   </div>
 </section>
@@ -920,68 +805,49 @@
         <div class="foot-logo">
           <span class="logo-text"><span class="l1">DRA. LUCIANA GRANADO</span></span>
         </div>
-        <p class="small">Odontologia integrada com tecnologia de ponta e cuidado humanizado em Vila Velha.</p>
+        <p class="small">Odontologia integrada e humanizada em Vila Velha.</p>
       </div>
       <div class="foot-col">
         <h6>Navegação</h6>
         <a href="#sobre">Sobre</a>
         <a href="#especializacoes">Especialidades</a>
         <a href="#procedimentos">Procedimentos</a>
-        <a href="#galeria">Clínica</a>
-        <a href="#depoimentos">Depoimentos</a>
-      </div>
-      <div class="foot-col">
-        <h6>Especialidades</h6>
-        <a href="#especializacoes">Endodontia</a>
-        <a href="#especializacoes">Ortodontia</a>
-        <a href="#especializacoes">Implantodontia</a>
-        <a href="#especializacoes">Musicoterapia</a>
       </div>
       <div class="foot-col">
         <h6>Contato</h6>
-        <p>Av. Henrique Moscoso, 1069<br>Vila Velha, ES 29100-021</p>
+        <p>Vila Velha, ES</p>
         <a href="tel:+5527997631575">+55 27 99763-1575</a>
-        <a href="https://wa.me/5527997631575">WhatsApp</a>
+      </div>
+      <div class="foot-col">
+        <h6>Social</h6>
         <div class="foot-social">
-          <a href="https://instagram.com/dralucianagranado" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-          <a href="https://wa.me/5527997631575" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></a>
+          <a href="https://instagram.com/dralucianagranado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
         </div>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Dra. Luciana Granado — Odontologia Integrada. Direitos reservados.</span>
+      <span>© 2026 Dra. Luciana Granado.</span>
       <span>CRO-ES 5703</span>
     </div>
   </div>
 </footer>
 
-<a href="https://wa.me/5527997631575" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+<a href="https://wa.me/5527997631575" target="_blank" rel="noopener" class="wa-float">
   <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.13-1.54a9.85 9.85 0 004.91 1.31h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm0 17.9h-.01a8.02 8.02 0 01-4.08-1.12l-.29-.17-3.05.92.91-2.98-.19-.3a8 8 0 01-1.24-4.34c0-4.42 3.6-8.02 8.03-8.02 2.14 0 4.16.84 5.67 2.35a7.96 7.96 0 012.34 5.68c0 4.43-3.6 8-8.09 8zm4.4-6c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.8-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02 0 1.19.87 2.34.99 2.5.12.16 1.71 2.61 4.15 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"/></svg>
 </a>
 
-<button class="top-float" id="topFloat" aria-label="Voltar ao topo">
-  <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+<button class="top-float" id="topFloat">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
-<template id="tooth-svg">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-    <path fill="#c9a15a" d="M30 15c-10 0-15 10-14 23 1 17 6 37 12 47 3 5 8 3 9-5 1-10 3-20 13-20s12 10 13 20c1 8 6 10 9 5 6-10 11-30 12-47 1-13-4-23-14-23-8 0-12 5-20 5s-8-5-20-5Z"/>
-  </svg>
-</template>
-
 <script>
-  // Tema claro/escuro
   const themeToggle = document.getElementById('themeToggle');
   const rootEl = document.documentElement;
-  const savedTheme = localStorage.getItem('agTheme') || 'light';
-  rootEl.setAttribute('data-theme', savedTheme);
   themeToggle.addEventListener('click', ()=>{
     const next = rootEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     rootEl.setAttribute('data-theme', next);
-    localStorage.setItem('agTheme', next);
   });
 
-  // Header: solid on scroll + hide on scroll down / show on scroll up
   const header = document.getElementById('header');
   let lastY = window.scrollY;
   window.addEventListener('scroll', ()=>{
@@ -990,22 +856,12 @@
     if(y > lastY && y > 240){ header.classList.add('hide-nav'); }
     else{ header.classList.remove('hide-nav'); }
     lastY = y;
-
     const topFloat = document.getElementById('topFloat');
     if(y > 600){ topFloat.classList.add('show'); } else { topFloat.classList.remove('show'); }
   }, {passive:true});
 
-  document.getElementById('topFloat').addEventListener('click', ()=>{
-    window.scrollTo({top:0, behavior:'smooth'});
-  });
+  document.getElementById('topFloat').addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
 
-  // Logo SVG
-  const svgTemplate = document.getElementById('tooth-svg').innerHTML;
-  document.querySelectorAll('.logo-svg-slot').forEach(slot=>{
-    slot.innerHTML = svgTemplate.replace('<svg ', '<svg width="34" height="34" ');
-  });
-
-  // Menu mobile
   const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobileMenu');
   const closeMenu = document.getElementById('closeMenu');
@@ -1013,68 +869,12 @@
   closeMenu.addEventListener('click', ()=> mobileMenu.style.display='none');
   document.querySelectorAll('.mob-link').forEach(l=> l.addEventListener('click', ()=> mobileMenu.style.display='none'));
 
-  // Reveal on scroll com stagger
   const revealEls = document.querySelectorAll('.reveal');
-  revealEls.forEach((el,i)=>{ el.style.transitionDelay = (i % 6) * 70 + 'ms'; });
   const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
-    });
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
   }, {threshold:0.15});
   revealEls.forEach(el=> io.observe(el));
 
-  // Entrada cinematográfica do título do hero: palavra por palavra
-  const heroTitle = document.getElementById('heroTitle');
-  (function splitWords(){
-    const walker = document.createTreeWalker(heroTitle, NodeFilter.SHOW_TEXT, null);
-    const textNodes = [];
-    let n;
-    while(n = walker.nextNode()){ textNodes.push(n); }
-    let wordIndex = 0;
-    textNodes.forEach(node=>{
-      const words = node.textContent.split(' ');
-      const frag = document.createDocumentFragment();
-      words.forEach((w,i)=>{
-        if(w === ''){ return; }
-        const wrap = document.createElement('span');
-        wrap.className = 'word';
-        const inner = document.createElement('span');
-        inner.textContent = w + (i < words.length-1 ? '\u00A0' : '');
-        inner.style.animationDelay = (0.15 + wordIndex*0.09) + 's';
-        wrap.appendChild(inner);
-        frag.appendChild(wrap);
-        wordIndex++;
-      });
-      node.parentNode.replaceChild(frag, node);
-    });
-  })();
-
-  // Nav ativo conforme a seção visível
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('nav.links a[data-nav]');
-  const navIo = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      const link = document.querySelector('nav.links a[href="#'+entry.target.id+'"]');
-      if(!link) return;
-      if(entry.isIntersecting){
-        navLinks.forEach(l=>l.classList.remove('active'));
-        link.classList.add('active');
-      }
-    });
-  }, {rootMargin:'-45% 0px -50% 0px'});
-  sections.forEach(s=> navIo.observe(s));
-
-  // Formulário de agendamento -> WhatsApp
-  document.getElementById('bookingForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    const nome = document.getElementById('bkNome').value.trim();
-    const tel = document.getElementById('bkTel').value.trim();
-    const tipo = document.getElementById('bkTipo').value;
-    const msg = 'Olá! Meu nome é ' + nome + ' (telefone ' + tel + ') e gostaria de agendar: ' + tipo + '.';
-    window.open('https://wa.me/5527997631575?text=' + encodeURIComponent(msg), '_blank');
-  });
-
-  // Sliders comparativos Antes/Depois
   document.querySelectorAll('[data-compare]').forEach(el=>{
     const after = el.querySelector('.compare-after');
     const handle = el.querySelector('.compare-handle');
