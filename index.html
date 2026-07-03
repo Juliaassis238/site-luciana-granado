@@ -4,47 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Dra. Luciana Granado — Odontologia Integrada | Vila Velha ES</title>
-<meta name="description" content="Dra. Luciana Granado, cirurgiã-dentista CRO-ES 5703. Especialista em Endodontia, Ortodontia e Implantodontia em Vila Velha, ES. Atendimento humanizado e especializado.">
+<meta name="description" content="Dra. Luciana Granado CRO-ES 5703. Endodontia, Ortodontia e Implantodontia em Vila Velha.">
 <meta name="theme-color" content="#0e0c0b">
-<meta property="og:type" content="business.business">
-<meta property="og:title" content="Dra. Luciana Granado — Odontologia Integrada">
-<meta property="og:description" content="Especialista em Endodontia, Ortodontia e Implantodontia em Vila Velha, ES. Cuidado completo e humanizado.">
-<meta property="og:image" content="images/dra-luciana-hero.jpg">
-<meta property="og:locale" content="pt_BR">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23c9a15a' d='M30 15c-10 0-15 10-14 23 1 17 6 37 12 47 3 5 8 3 9-5 1-10 3-20 13-20s12 10 13 20c1 8 6 10 9 5 6-10 11-30 12-47 1-13-4-23-14-23-8 0-12 5-20 5s-8-5-20-5Z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="images/dra-luciana-hero.jpg">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Dentist",
-  "name": "Dra. Luciana Granado",
-  "image": "images/dra-luciana-hero.jpg",
-  "telephone": "+5527997631575",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Avenida Henrique Moscoso, 1069, Sala 5",
-    "addressLocality": "Vila Velha",
-    "addressRegion": "ES",
-    "postalCode": "29100-021",
-    "addressCountry": "BR"
-  },
-  "openingHoursSpecification": [
-    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}
-  ]
-}
-</script>
 <style>
   :root{
     --preto:#0c0a09;
     --preto-2:#161311;
     --dourado:#c9a15a;
     --dourado-claro:#e4c98a;
-    --rose:#e9dcd3;
-    --rose-2:#f3e9e2;
     --branco:#fdfbf9;
     --texto-escuro:#231f1c;
     --texto-suave:#6b6058;
@@ -54,14 +25,16 @@
     --header-h:84px;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;scroll-padding-top:var(--header-h);}
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+  }
   body{
     font-family:var(--sans);
     color:var(--texto-escuro);
     background:var(--branco);
-    overflow-x:hidden;
     -webkit-font-smoothing:antialiased;
-    width:100%;
     line-height:1.5;
   }
   img, video{max-width:100%;display:block;height:auto;}
@@ -94,7 +67,6 @@
   .btn:hover{background:var(--dourado);color:var(--preto);}
   .btn.solid{background:var(--dourado);color:var(--preto);}
 
-  /* ===== HEADER ===== */
   header{
     position:fixed;top:0;left:0;right:0;z-index:1000;
     display:flex;align-items:center;justify-content:space-between;
@@ -104,25 +76,20 @@
     transition:all 0.3s ease;
   }
   header.scrolled{padding:0.6rem 5%; background:rgba(12,10,9,0.95);}
-  .logo-mark{display:flex;align-items:center;gap:.8rem;}
   .logo-mark img{height:45px;width:auto;}
   
   nav.links{display:flex;gap:1.5rem;}
-  nav.links a{
-    color:#e8ddd0;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
-    transition:color 0.3s ease;
-  }
-  nav.links a:hover{color:var(--dourado-claro);}
+  nav.links a{color:#e8ddd0;font-size:.7rem;text-transform:uppercase;}
   
   .burger{display:none;flex-direction:column;gap:6px;cursor:pointer;}
   .burger span{width:24px;height:2px;background:var(--dourado-claro);}
 
-  /* ===== HERO ===== */
   .hero{
-    position:relative;min-height:100vh;min-height:100svh;
+    position:relative;min-height:100vh;
     display:flex;align-items:center;
     padding-top:var(--header-h);
     overflow:hidden;
+    background:var(--branco);
   }
   .hero-bg{position:absolute;inset:0;z-index:1;}
   .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;}
@@ -137,31 +104,24 @@
   .hero p.lead{font-size:1.1rem;color:var(--texto-suave);margin-bottom:2.5rem;}
   
   .credenciais{
-    display:grid;grid-template-columns:repeat(3, 1fr);gap:1.5rem;
+    display:grid;grid-template-columns:repeat(3, 1fr);gap:1rem;
     padding-top:2rem;border-top:1px solid var(--linha);
   }
   .credenciais strong{font-family:var(--serif);font-size:1.5rem;color:var(--dourado);display:block;}
-  .credenciais span{font-size:.65rem;text-transform:uppercase;color:var(--texto-suave);}
+  .credenciais span{font-size:.6rem;text-transform:uppercase;color:var(--texto-suave);}
 
-  /* ===== SECTIONS ===== */
   section{padding:5rem 0;width:100%;}
   .sec-head{margin-bottom:3rem;max-width:700px;}
   .sec-head.center{text-align:center;margin-left:auto;margin-right:auto;}
   .sec-head h2{font-size:clamp(1.8rem, 5vw, 2.8rem);margin-bottom:1rem;}
 
-  /* ESPECIALIDADES */
-  .esp-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:1.5rem;}
-  .esp-card{
-    background:var(--branco);padding:2.5rem;border:1px solid var(--linha);
-    transition:transform 0.3s ease;
-  }
+  .esp-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1.5rem;}
+  .esp-card{background:var(--branco);padding:2.5rem;border:1px solid var(--linha);transition:transform 0.3s ease;}
   .esp-card:hover{transform:translateY(-5px);border-color:var(--dourado);}
   .esp-num{color:var(--dourado);font-family:var(--serif);font-size:1.2rem;display:block;margin-bottom:1rem;}
-  .esp-card h3{font-size:1.5rem;margin-bottom:1rem;}
 
-  /* EXPERIENCIAS */
   .experiencias{background:var(--preto-2);color:var(--branco);}
-  .exp-row{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:4rem;}
+  .exp-row{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:4rem;}
   .exp-row:nth-child(even) .exp-media{order:2;}
   .exp-media{border-radius:4px;overflow:hidden;aspect-ratio:4/3;}
   .exp-media img{width:100%;height:100%;object-fit:cover;}
@@ -169,35 +129,27 @@
   .exp-text p{color:#ccc;margin-bottom:1.5rem;}
   .saiba{color:var(--dourado);font-weight:600;text-transform:uppercase;font-size:0.8rem;border-bottom:1px solid;}
 
-  /* RESULTADOS */
-  .resultados-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:2.5rem;}
+  .resultados-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:2.5rem;}
   .compare-slider{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:ew-resize;}
   .compare-before{position:absolute;inset:0;z-index:1;width:50%;overflow:hidden;border-right:2px solid var(--branco);}
   .compare-before img, .compare-after img{width:100%;height:100%;object-fit:cover;}
   .compare-range{position:absolute;inset:0;width:100%;height:100%;opacity:0;z-index:10;cursor:pointer;}
   .compare-info{padding:1rem 0;}
 
-  /* SOBRE */
-  .sobre-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:center;}
+  .sobre-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;align-items:center;}
   .sobre-img img{border-radius:4px;}
   .sobre-text h2{font-size:2.5rem;margin-bottom:1.5rem;}
   .sobre-text p{margin-bottom:1.2rem;color:var(--texto-suave);}
 
-  /* CONTATO */
-  .contato-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:3rem;}
+  .contato-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));gap:2rem;}
   .contato-item{display:flex;gap:1.5rem;margin-bottom:2rem;}
   .contato-item svg{width:24px;height:24px;color:var(--dourado);flex-shrink:0;}
-  .mapa-wrap{height:350px;border-radius:4px;overflow:hidden;}
+  .mapa-wrap{height:350px;border-radius:4px;overflow:hidden;margin-top:3rem;}
   .mapa-wrap iframe{width:100%;height:100%;border:none;}
 
-  /* FOOTER */
   footer{background:var(--preto-2);color:white;padding:4rem 0 2rem;}
-  .foot-main{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;}
-  .foot-col h6{color:var(--dourado);margin-bottom:1.5rem;text-transform:uppercase;font-size:0.8rem;}
-  .foot-col a{display:block;margin-bottom:0.8rem;color:#ccc;font-size:0.9rem;}
-  .foot-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;font-size:0.8rem;color:#888;}
+  .foot-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);text-align:center;font-size:0.8rem;color:#888;}
 
-  /* FLOATING */
   .wa-float{
     position:fixed;bottom:2rem;right:2rem;width:60px;height:60px;
     background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;
@@ -205,11 +157,6 @@
   }
   .wa-float svg{width:32px;height:32px;fill:white;}
 
-  /* REVEAL */
-  .reveal{opacity:0;transform:translateY(30px);transition:all 0.8s ease;}
-  .reveal.active{opacity:1;transform:translateY(0);}
-
-  /* MOBILE MENU */
   #mobileMenu{
     position:fixed;inset:0;background:rgba(12,10,9,0.98);z-index:2000;
     display:none;flex-direction:column;align-items:center;justify-content:center;gap:2rem;
@@ -217,12 +164,13 @@
   .mob-link{color:white;font-family:var(--serif);font-size:2rem;}
   #mobClose{position:absolute;top:2rem;right:5%;font-size:3rem;color:var(--dourado);cursor:pointer;}
 
-  /* ===== RESPONSIVE ===== */
+  .reveal{opacity:0;transform:translateY(30px);transition:all 0.8s ease;}
+  .reveal.active{opacity:1;transform:translateY(0);}
+
   @media(max-width:1024px){
-    .hero-bg::after{background:linear-gradient(to bottom, rgba(253,251,249,0.9) 40%, rgba(253,251,249,0.6) 100%);}
     .hero{align-items:flex-start;padding-top:120px;}
     .hero-inner{max-width:100%;text-align:center;}
-    .credenciais{max-width:500px;margin:0 auto;}
+    .credenciais{max-width:400px;margin:0 auto;}
   }
 
   @media(max-width:768px){
@@ -230,14 +178,7 @@
     .burger{display:flex;}
     .exp-row{grid-template-columns:1fr;gap:2rem;}
     .exp-row:nth-child(even) .exp-media{order:0;}
-    .sobre-grid{grid-template-columns:1fr;gap:3rem;}
-    .foot-main{grid-template-columns:1fr 1fr;gap:2rem;}
-  }
-
-  @media(max-width:480px){
-    .hero h1{font-size:2.4rem;}
-    .foot-main{grid-template-columns:1fr;}
-    .foot-bottom{flex-direction:column;text-align:center;gap:1rem;}
+    .sobre-grid{grid-template-columns:1fr;gap:2rem;}
   }
 </style>
 </head>
@@ -287,23 +228,23 @@
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">Especialidades</span>
-      <h2>Tratamentos Especializados</h2>
+      <h2>Tratamentos</h2>
     </div>
     <div class="esp-grid">
       <div class="esp-card reveal">
         <span class="esp-num">01</span>
         <h3>Endodontia</h3>
-        <p>Tratamento de canal com tecnologia para o seu conforto e preservação do dente.</p>
+        <p>Tratamento de canal especializado e humanizado.</p>
       </div>
       <div class="esp-card reveal">
         <span class="esp-num">02</span>
         <h3>Ortodontia</h3>
-        <p>Correção do alinhamento dental com aparelhos modernos e discretos.</p>
+        <p>Alinhamento dental com as melhores técnicas.</p>
       </div>
       <div class="esp-card reveal">
         <span class="esp-num">03</span>
         <h3>Implantodontia</h3>
-        <p>Recuperação da função e estética com implantes seguros e duradouros.</p>
+        <p>Recuperação da função mastigatória e estética.</p>
       </div>
     </div>
   </div>
@@ -317,7 +258,7 @@
       </div>
       <div class="exp-text">
         <h3>Tecnologia em Canal</h3>
-        <p>Utilizamos equipamentos de ponta para realizar tratamentos de canal mais rápidos, precisos e praticamente indolores.</p>
+        <p>Tratamentos precisos e confortáveis para preservar sua saúde bucal.</p>
         <a href="https://wa.me/5527997631575" target="_blank" class="saiba">Saber mais</a>
       </div>
     </div>
@@ -327,8 +268,8 @@
       </div>
       <div class="exp-text">
         <h3>Ortodontia Moderna</h3>
-        <p>Alinhamos seu sorriso com planejamento digital, garantindo resultados mais previsíveis e estéticos.</p>
-        <a href="https://wa.me/5527997631575" target="_blank" class="saiba">Ver aparelhos</a>
+        <p>Planejamento detalhado para um sorriso perfeito e funcional.</p>
+        <a href="https://wa.me/5527997631575" target="_blank" class="saiba">Ver mais</a>
       </div>
     </div>
   </div>
@@ -338,7 +279,7 @@
   <div class="container">
     <div class="sec-head center reveal">
       <span class="eyebrow">Resultados</span>
-      <h2>Transformações Reais</h2>
+      <h2>Transformações</h2>
     </div>
     <div class="resultados-grid">
       <div class="compare-card reveal">
@@ -378,8 +319,7 @@
       <div class="sobre-text reveal">
         <span class="eyebrow">A Profissional</span>
         <h2>Dra. Luciana Granado</h2>
-        <p>Especialista em Endodontia, Ortodontia e Implantodontia, dedicada a oferecer um atendimento que une técnica e acolhimento.</p>
-        <p>Nosso consultório em Vila Velha é preparado para cuidar de você e da sua família com toda a segurança e tecnologia necessária.</p>
+        <p>Especialista dedicada a oferecer o melhor da odontologia com um olhar humano e cuidadoso.</p>
         <a href="https://wa.me/5527997631575" target="_blank" class="btn solid">Falar com a Doutora</a>
       </div>
     </div>
@@ -398,7 +338,7 @@
         </div>
         <div class="contato-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <div><h5>Endereço</h5><p>Av. Henrique Moscoso, 1069, Sala 5, Vila Velha — ES</p></div>
+          <div><h5>Endereço</h5><p>Av. Henrique Moscoso, 1069, Vila Velha — ES</p></div>
         </div>
       </div>
       <div class="mapa-wrap reveal">
@@ -410,22 +350,6 @@
 
 <footer>
   <div class="container">
-    <div class="foot-main">
-      <div class="foot-logo">
-        <h6 style="color:var(--dourado); font-size:1.2rem;">Dra. Luciana Granado</h6>
-        <p>Odontologia Integrada em Vila Velha.</p>
-      </div>
-      <div class="foot-col">
-        <h6>Links</h6>
-        <a href="#sobre">Sobre</a>
-        <a href="#resultados">Resultados</a>
-        <a href="#contato">Contato</a>
-      </div>
-      <div class="foot-col">
-        <h6>Legal</h6>
-        <p>CRO-ES 5703</p>
-      </div>
-    </div>
     <div class="foot-bottom">
       <p>© 2026 Dra. Luciana Granado. Todos os direitos reservados.</p>
     </div>
@@ -443,7 +367,7 @@
   const mobileMenu = document.getElementById('mobileMenu');
 
   window.addEventListener('scroll', () => {
-    if(window.pageYOffset > 80) header.classList.add('scrolled');
+    if(window.pageYOffset > 50) header.classList.add('scrolled');
     else header.classList.remove('scrolled');
   });
 
@@ -458,7 +382,6 @@
       if(entry.isIntersecting) entry.target.classList.add('active');
     });
   }, { threshold: 0.1 });
-
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   document.querySelectorAll('.compare-range').forEach(range => {
@@ -471,5 +394,3 @@
 </script>
 </body>
 </html>
- 
- 
