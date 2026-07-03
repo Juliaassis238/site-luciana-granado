@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Dra. Luciana Granado — Odontologia Integrada | Vila Velha ES</title>
 <meta name="description" content="Dra. Luciana Granado, cirurgiã-dentista CRO-ES 5703. Especialista em Endodontia, Ortodontia e Implantodontia em Vila Velha, ES. Atendimento humanizado e especializado.">
 <meta name="theme-color" content="#0e0c0b">
@@ -55,10 +55,6 @@
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;scroll-padding-top:var(--header-h);}
-  @media(prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto;}
-    *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}
-  }
   body{
     font-family:var(--sans);
     color:var(--texto-escuro);
@@ -66,11 +62,12 @@
     overflow-x:hidden;
     -webkit-font-smoothing:antialiased;
     width:100%;
+    line-height:1.5;
   }
-  img{max-width:100%;display:block;height:auto;width:100%;}
+  img, video{max-width:100%;display:block;height:auto;}
   a{text-decoration:none;color:inherit;}
-  ::selection{background:var(--dourado);color:var(--preto);}
-  :focus-visible{outline:2px solid var(--dourado);outline-offset:3px;}
+  
+  .container{width:100%;max-width:1240px;margin:0 auto;padding:0 5%;}
   .eyebrow{
     font-family:var(--sans);
     letter-spacing:.3em;
@@ -78,350 +75,193 @@
     font-size:.72rem;
     color:var(--dourado);
     font-weight:500;
+    margin-bottom:1rem;
+    display:block;
   }
-  h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.05;}
-  .container{width:100%;max-width:1240px;margin:0 auto;padding:0 4.5%;}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.1;}
+  
   .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
-    padding:1rem 2.1rem;
-    font-family:var(--sans);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:0.9rem 1.8rem;
+    font-family:var(--sans);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;
     border:1px solid var(--dourado);
     color:var(--dourado);
     background:transparent;
-    transition:all .45s cubic-bezier(.4,0,.2,1);
+    transition:all 0.3s ease;
     cursor:pointer;
-    white-space:nowrap;
     border-radius:2px;
   }
   .btn:hover{background:var(--dourado);color:var(--preto);}
   .btn.solid{background:var(--dourado);color:var(--preto);}
-  .btn.solid:hover{background:var(--dourado-claro);border-color:var(--dourado-claro);}
-  .btn.on-dark{border-color:rgba(253,251,249,.7);color:var(--branco);}
-  .btn.on-dark:hover{background:var(--branco);color:var(--preto);border-color:var(--branco);}
-  .btn.on-light{border-color:var(--texto-escuro);color:var(--texto-escuro);}
-  .btn.on-light:hover{background:var(--texto-escuro);color:var(--branco);}
-  .btn.full{width:100%;}
 
   /* ===== HEADER ===== */
   header{
-    position:fixed;top:0;left:0;right:0;z-index:100;
+    position:fixed;top:0;left:0;right:0;z-index:1000;
     display:flex;align-items:center;justify-content:space-between;
-    padding:1.1rem 4.5%;
-    padding-top:calc(1.1rem + env(safe-area-inset-top));
-    transition:background .5s ease,padding .4s ease,box-shadow .4s ease,transform .35s ease;
-    background:rgba(12,10,9,.82);
+    padding:1rem 5%;
+    background:rgba(12,10,9,.85);
     backdrop-filter:blur(10px);
+    transition:all 0.3s ease;
   }
-  header.scrolled{
-    background:rgba(12,10,9,0.94);
-    backdrop-filter:blur(14px);
-    padding:.75rem 4.5%;
-    padding-top:calc(.75rem + env(safe-area-inset-top));
-    box-shadow:0 2px 16px rgba(0,0,0,.22);
-  }
-  header.hide-nav{transform:translateY(-110%);}
-  .logo-mark{display:flex;align-items:center;gap:.6rem;}
-  .logo-mark img{height:55px;width:auto;display:block;}
-  .logo-text{font-family:var(--serif);color:var(--dourado-claro);line-height:1.1;}
-  .logo-text .l1{font-size:1rem;letter-spacing:.1em;display:block;font-weight:600;}
-  .logo-text .l2{font-size:.48rem;letter-spacing:.2em;color:#a89674;text-transform:uppercase;font-family:var(--sans);font-weight:400;}
-  nav.links{display:flex;gap:1.6rem;}
+  header.scrolled{padding:0.6rem 5%; background:rgba(12,10,9,0.95);}
+  .logo-mark{display:flex;align-items:center;gap:.8rem;}
+  .logo-mark img{height:45px;width:auto;}
+  
+  nav.links{display:flex;gap:1.5rem;}
   nav.links a{
-    color:#e8ddd0;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
-    position:relative;padding-bottom:5px;font-weight:400;
+    color:#e8ddd0;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+    transition:color 0.3s ease;
   }
-  nav.links a::after{
-    content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--dourado);
-    transition:width .35s ease;
-  }
-  nav.links a:hover::after,nav.links a.active::after{width:100%;}
-  nav.links a.active{color:var(--dourado-claro);}
-  .nav-cta{display:flex;align-items:center;gap:1.1rem;}
-  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.4rem;}
-  .burger span{width:24px;height:1.5px;background:var(--dourado-claro);transition:all .3s ease;}
-
-  /* Mobile Menu */
-  .mobile-menu{
-    position:fixed;inset:0;background:var(--preto);z-index:200;
-    display:flex;flex-direction:column;padding:2rem 4.5%;
-    transform:translateX(100%);transition:transform .5s cubic-bezier(.4,0,.2,1);
-  }
-  .mobile-menu.active{transform:translateX(0);}
-  .mob-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4rem;}
-  .mob-links{display:flex;flex-direction:column;gap:2rem;}
-  .mob-link{font-family:var(--serif);font-size:2.2rem;color:var(--branco);}
-  .mob-link span{font-family:var(--sans);font-size:.8rem;color:var(--dourado);margin-right:1rem;}
-  .mob-footer{margin-top:auto;padding-top:2rem;border-top:1px solid var(--linha);}
+  nav.links a:hover{color:var(--dourado-claro);}
+  
+  .burger{display:none;flex-direction:column;gap:6px;cursor:pointer;}
+  .burger span{width:24px;height:2px;background:var(--dourado-claro);}
 
   /* ===== HERO ===== */
   .hero{
-    position:relative;min-height:100svh;
-    display:flex;align-items:flex-start;
-    color:var(--branco);
+    position:relative;min-height:100vh;min-height:100svh;
+    display:flex;align-items:center;
+    padding-top:var(--header-h);
     overflow:hidden;
-    width:100%;
-    isolation:isolate;
   }
-  @media(min-width:901px){
-    .hero{align-items:flex-end;}
-  }
-  .hero-bg{position:absolute;inset:0;z-index:-2;}
-  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 20%;transform:scale(1.08);animation:heroZoom 18s ease-out forwards;display:block;}
-  @keyframes heroZoom{to{transform:scale(1);}}
+  .hero-bg{position:absolute;inset:0;z-index:1;}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;}
   .hero-bg::after{
     content:'';position:absolute;inset:0;
-    background:
-      linear-gradient(180deg, rgba(253,251,249,.4) 0%, rgba(253,251,249,.72) 32%, rgba(253,251,249,.97) 88%),
-      linear-gradient(90deg, rgba(253,251,249,.94) 0%, rgba(253,251,249,.55) 48%, rgba(253,251,249,.2) 100%);
+    background:linear-gradient(to right, rgba(253,251,249,0.95) 30%, rgba(253,251,249,0.4) 100%);
   }
   .hero-content{position:relative;z-index:2;width:100%;}
-  .hero .hero-content{padding-top:calc(var(--header-h) + 4.5rem);padding-bottom:3rem;}
-  .hero-inner{max-width:680px;}
-  .hero{color:var(--texto-escuro);}
-  .hero .eyebrow{color:var(--dourado);margin-bottom:1.5rem;display:flex;align-items:center;gap:.8rem;font-weight:600;}
-  .hero .eyebrow::before{content:'';width:34px;height:1px;background:var(--dourado);display:inline-block;}
-  .hero h1{
-    font-size:clamp(2.5rem,6vw,4.6rem);
-    margin-bottom:1.4rem;
-    line-height:1.08;
-    letter-spacing:-.6px;
-    color:var(--texto-escuro);
-  }
-  .hero h1 em{color:var(--dourado);font-style:italic;font-weight:500;}
-  .hero p.lead{
-    font-size:1.06rem;color:var(--texto-suave);max-width:520px;line-height:1.75;margin-bottom:2.4rem;font-weight:300;
-  }
-  .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.6rem;}
-
-  .credenciais{
-    display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--linha);padding-top:1.5rem;
-    max-width:520px;
-  }
-  .credenciais div{flex:1 1 33.33%;padding-right:1rem;margin-bottom:.6rem;}
-  .credenciais strong{font-family:var(--serif);font-size:1.65rem;color:var(--dourado);display:block;font-weight:600;}
-  .credenciais span{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--texto-suave);font-weight:500;}
-
-  .scroll-cue{
-    position:relative;z-index:2;margin:2.4rem 0 2rem;
-    display:flex;align-items:center;gap:.7rem;color:var(--texto-suave);
-    font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
-  }
-  .scroll-cue .line{width:38px;height:1px;background:linear-gradient(90deg,var(--dourado),transparent);}
-
-  @media(max-width:760px){
-    header{padding:1rem 4.5%;}
-    .nav-cta .btn{display:none;}
-    .burger{display:flex;}
-    .hero .hero-content{padding-top:calc(var(--header-h) + 2rem);}
-    .credenciais div{flex:1 1 45%;}
-    .scroll-cue{display:none;}
-  }
-
-  /* ===== SECTIONS shared ===== */
-  section{padding:8rem 0;width:100%;overflow:hidden;}
-  .sec-head{max-width:640px;margin-bottom:3.4rem;}
-  .sec-head .eyebrow{margin-bottom:1rem;display:flex;align-items:center;gap:.8rem;}
-  .sec-head .eyebrow::before{content:'';width:34px;height:1px;background:var(--dourado);display:inline-block;}
-  .sec-head h2{font-size:clamp(2rem,3.8vw,2.9rem);color:var(--texto-escuro);}
-  .sec-head p{color:var(--texto-suave);margin-top:1rem;font-weight:300;line-height:1.7;font-size:.98rem;}
-  .sec-head.light h2, .sec-head.light .eyebrow{color:var(--dourado-claro);}
-  .sec-head.light p{color:#cfc3b3;}
-  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center;}
-  .sec-head.center .eyebrow{justify-content:center;}
-  .sec-head.center .eyebrow::before{display:none;}
-
-  /* ===== ESPECIALIZACOES - FIX MOBILE ===== */
-  .especializacoes{background:var(--branco);}
-  .esp-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--linha);
-    border:1px solid var(--linha);
-    width:100%;
-  }
-  .esp-card{
-    background:var(--branco);padding:3rem 2.4rem;transition:all .4s ease;
-    position:relative;
-  }
-  .esp-card:hover{background:var(--rose-2);}
-  .esp-num{font-family:var(--serif);font-size:.84rem;color:var(--dourado);letter-spacing:.1em;margin-bottom:1.6rem;display:block;font-weight:500;}
-  .esp-card h3{font-size:1.4rem;margin-bottom:.8rem;color:var(--texto-escuro);line-height:1.2;}
-  .esp-card p{font-size:.88rem;color:var(--texto-suave);line-height:1.65;font-weight:300;}
-
-  @media(max-width:900px){
-    .esp-grid{grid-template-columns:1fr;gap:1px;}
-    .esp-card{padding:2.5rem 1.5rem;}
-  }
-
-  /* ===== EXPERIENCIAS ===== */
-  .experiencias{background:var(--preto);color:var(--branco);}
-  .exp-row{
-    display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center;
-    padding:3.6rem 0;border-top:1px solid var(--linha);
-  }
-  .exp-row:first-of-type{border-top:none;}
-  .exp-row:nth-of-type(even) .exp-media{order:2;}
-  .exp-media{position:relative;overflow:hidden;border-radius:3px;aspect-ratio:4/3;}
-  .exp-media img{width:100%;height:100%;object-fit:cover;background:var(--rose-2);transition:transform .9s cubic-bezier(.2,.8,.2,1);}
-  .exp-row:hover .exp-media img{transform:scale(1.06);}
-  .exp-tag{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dourado-claro);margin-bottom:1rem;display:block;font-weight:600;}
-  .exp-text h3{font-size:clamp(1.5rem,2.6vw,2.1rem);margin-bottom:1rem;color:var(--branco);}
-  .exp-text p{color:#c9bda8;font-weight:300;line-height:1.75;font-size:.95rem;margin-bottom:1.4rem;}
-  .exp-text a.saiba{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dourado);border-bottom:1px solid var(--dourado);padding-bottom:.3rem;}
+  .hero-inner{max-width:600px;}
+  .hero h1{font-size:clamp(2.2rem, 8vw, 4rem);margin-bottom:1.5rem;color:var(--texto-escuro);}
+  .hero h1 em{color:var(--dourado);font-style:italic;}
+  .hero p.lead{font-size:1.1rem;color:var(--texto-suave);margin-bottom:2.5rem;}
   
-  .proc-mini{margin-top:5rem;}
-  .proc-mini-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
-  .proc-mini-card{position:relative;overflow:hidden;border-radius:3px;aspect-ratio:1/1;}
-  .proc-mini-card img{width:100%;height:100%;object-fit:cover;background:var(--rose-2);transition:transform .7s ease;}
-  .proc-mini-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.85));}
-  .proc-mini-label{position:absolute;left:0;right:0;bottom:0;padding:1.1rem;z-index:2;font-family:var(--serif);font-size:1.05rem;color:var(--branco);}
-
-  @media(max-width:900px){
-    .exp-row{grid-template-columns:1fr;gap:1.8rem;padding:2.8rem 0;}
-    .exp-row:nth-of-type(even) .exp-media{order:0;}
-    .proc-mini-grid{grid-template-columns:repeat(2,1fr);}
+  .credenciais{
+    display:grid;grid-template-columns:repeat(3, 1fr);gap:1.5rem;
+    padding-top:2rem;border-top:1px solid var(--linha);
   }
+  .credenciais strong{font-family:var(--serif);font-size:1.5rem;color:var(--dourado);display:block;}
+  .credenciais span{font-size:.65rem;text-transform:uppercase;color:var(--texto-suave);}
 
-  /* ===== RESULTADOS ===== */
-  .resultados{background:var(--branco);}
-  .resultados-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.2rem;}
-  .compare-card{display:flex;flex-direction:column;}
-  .compare-slider{
-    position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:3px;
-    border:1px solid var(--linha);background:var(--rose-2);cursor:ew-resize;
-    touch-action:none;
+  /* ===== SECTIONS ===== */
+  section{padding:5rem 0;width:100%;}
+  .sec-head{margin-bottom:3rem;max-width:700px;}
+  .sec-head.center{text-align:center;margin-left:auto;margin-right:auto;}
+  .sec-head h2{font-size:clamp(1.8rem, 5vw, 2.8rem);margin-bottom:1rem;}
+
+  /* ESPECIALIDADES */
+  .esp-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:1.5rem;}
+  .esp-card{
+    background:var(--branco);padding:2.5rem;border:1px solid var(--linha);
+    transition:transform 0.3s ease;
   }
-  .compare-before, .compare-after{position:absolute;inset:0;}
-  .compare-after{clip-path:inset(0 50% 0 0);z-index:2;}
-  .compare-slider img{width:100%;height:100%;object-fit:cover;}
-  .compare-handle{
-    position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--branco);
-    z-index:10;transform:translateX(-50%);pointer-events:none;
-  }
-  .compare-handle::after{
-    content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-    width:34px;height:34px;background:var(--branco);border-radius:50%;
-    box-shadow:0 0 15px rgba(0,0,0,.2);
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23c9a15a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m18 8 4 4-4 4M6 8l-4 4 4 4'/%3E%3C/svg%3E");
-    background-repeat:no-repeat;background-position:center;background-size:14px;
-  }
-  .compare-range{
-    position:absolute;inset:0;width:100%;height:100%;opacity:0;z-index:20;cursor:ew-resize;
-  }
-  .compare-info{padding:1.4rem 0;}
-  .compare-info h4{font-size:1.25rem;margin-bottom:.4rem;}
-  .compare-info p{font-size:.85rem;color:var(--texto-suave);text-transform:uppercase;letter-spacing:.05em;}
+  .esp-card:hover{transform:translateY(-5px);border-color:var(--dourado);}
+  .esp-num{color:var(--dourado);font-family:var(--serif);font-size:1.2rem;display:block;margin-bottom:1rem;}
+  .esp-card h3{font-size:1.5rem;margin-bottom:1rem;}
 
-  @media(max-width:900px){
-    .resultados-grid{grid-template-columns:1fr;gap:3rem;}
-  }
+  /* EXPERIENCIAS */
+  .experiencias{background:var(--preto-2);color:var(--branco);}
+  .exp-row{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:4rem;}
+  .exp-row:nth-child(even) .exp-media{order:2;}
+  .exp-media{border-radius:4px;overflow:hidden;aspect-ratio:4/3;}
+  .exp-media img{width:100%;height:100%;object-fit:cover;}
+  .exp-text h3{font-size:2rem;margin-bottom:1.2rem;}
+  .exp-text p{color:#ccc;margin-bottom:1.5rem;}
+  .saiba{color:var(--dourado);font-weight:600;text-transform:uppercase;font-size:0.8rem;border-bottom:1px solid;}
 
-  /* ===== SOBRE ===== */
-  .sobre{background:var(--rose-2);}
-  .sobre-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center;}
-  .sobre-img img{border-radius:3px;box-shadow:0 30px 60px rgba(0,0,0,.12);}
-  .sobre-text h2{margin-bottom:1.8rem;}
-  .sobre-text p{margin-bottom:1.5rem;line-height:1.8;color:var(--texto-suave);font-weight:300;}
-  .sobre-cta{display:flex;align-items:center;gap:2.5rem;margin-top:2.5rem;}
-  .assinatura{font-family:var(--serif);font-size:1.4rem;color:var(--texto-escuro);line-height:1.2;}
-  .assinatura span{display:block;font-family:var(--sans);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--dourado);margin-top:.3rem;}
+  /* RESULTADOS */
+  .resultados-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:2.5rem;}
+  .compare-slider{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:ew-resize;}
+  .compare-before{position:absolute;inset:0;z-index:1;width:50%;overflow:hidden;border-right:2px solid var(--branco);}
+  .compare-before img, .compare-after img{width:100%;height:100%;object-fit:cover;}
+  .compare-range{position:absolute;inset:0;width:100%;height:100%;opacity:0;z-index:10;cursor:pointer;}
+  .compare-info{padding:1rem 0;}
 
-  @media(max-width:900px){
-    .sobre-grid{grid-template-columns:1fr;gap:3rem;}
-    .sobre-cta{flex-direction:column;align-items:flex-start;gap:1.5rem;}
-  }
+  /* SOBRE */
+  .sobre-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:center;}
+  .sobre-img img{border-radius:4px;}
+  .sobre-text h2{font-size:2.5rem;margin-bottom:1.5rem;}
+  .sobre-text p{margin-bottom:1.2rem;color:var(--texto-suave);}
 
-  /* ===== CONTATO ===== */
-  .contato{background:var(--branco);}
-  .contato-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;}
-  .contato-item{display:flex;gap:1.5rem;margin-top:2.5rem;}
-  .contato-item svg{width:22px;height:22px;color:var(--dourado);flex-shrink:0;margin-top:3px;}
-  .contato-item h5{font-family:var(--sans);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--dourado);margin-bottom:.5rem;font-weight:600;}
-  .contato-item a, .contato-item p{font-size:1.05rem;color:var(--texto-escuro);line-height:1.5;}
-  .mapa-wrap{border-radius:3px;overflow:hidden;height:100%;min-height:400px;border:1px solid var(--linha);}
-  .mapa-wrap iframe{width:100%;height:100%;border:none;filter:grayscale(0.2) contrast(1.1);}
+  /* CONTATO */
+  .contato-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:3rem;}
+  .contato-item{display:flex;gap:1.5rem;margin-bottom:2rem;}
+  .contato-item svg{width:24px;height:24px;color:var(--dourado);flex-shrink:0;}
+  .mapa-wrap{height:350px;border-radius:4px;overflow:hidden;}
+  .mapa-wrap iframe{width:100%;height:100%;border:none;}
 
-  @media(max-width:900px){
-    .contato-grid{grid-template-columns:1fr;gap:3.5rem;}
-    .mapa-wrap{min-height:300px;}
-  }
+  /* FOOTER */
+  footer{background:var(--preto-2);color:white;padding:4rem 0 2rem;}
+  .foot-main{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;}
+  .foot-col h6{color:var(--dourado);margin-bottom:1.5rem;text-transform:uppercase;font-size:0.8rem;}
+  .foot-col a{display:block;margin-bottom:0.8rem;color:#ccc;font-size:0.9rem;}
+  .foot-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;font-size:0.8rem;color:#888;}
 
-  /* ===== FOOTER ===== */
-  footer{background:var(--preto);color:var(--branco);padding:5rem 0 3rem;border-top:1px solid var(--linha);}
-  .foot-main{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:4rem;margin-bottom:4rem;}
-  .foot-logo p{margin-top:1.5rem;color:#9a8e82;font-size:.88rem;max-width:240px;line-height:1.6;}
-  .foot-col h6{font-family:var(--sans);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--dourado);margin-bottom:1.8rem;font-weight:600;}
-  .foot-col a{display:block;margin-bottom:.9rem;color:#c9bda8;font-size:.88rem;transition:color .3s ease;}
-  .foot-col a:hover{color:var(--branco);}
-  .social-links{display:flex;gap:1.2rem;}
-  .social-links svg{width:20px;height:20px;fill:currentColor;}
-  .foot-bottom{padding-top:2.5rem;border-top:1px solid rgba(201,161,90,0.15);display:flex;justify-content:space-between;color:#6b6058;font-size:.72rem;}
-
-  @media(max-width:900px){
-    .foot-main{grid-template-columns:1fr 1fr;gap:3rem;}
-    .foot-bottom{flex-direction:column;gap:1rem;text-align:center;}
-  }
-
-  /* WA Float */
+  /* FLOATING */
   .wa-float{
-    position:fixed;bottom:2rem;right:2rem;z-index:150;
-    width:56px;height:56px;background:#25d366;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 10px 25px rgba(37,211,102,0.3);
-    transition:transform .3s ease;
+    position:fixed;bottom:2rem;right:2rem;width:60px;height:60px;
+    background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);z-index:100;
   }
-  .wa-float:hover{transform:scale(1.1);}
-  .wa-float svg{width:28px;height:28px;fill:white;}
+  .wa-float svg{width:32px;height:32px;fill:white;}
 
-  /* Animations */
-  .reveal{opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.2,1,.2,1);}
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(30px);transition:all 0.8s ease;}
   .reveal.active{opacity:1;transform:translateY(0);}
+
+  /* MOBILE MENU */
+  #mobileMenu{
+    position:fixed;inset:0;background:rgba(12,10,9,0.98);z-index:2000;
+    display:none;flex-direction:column;align-items:center;justify-content:center;gap:2rem;
+  }
+  .mob-link{color:white;font-family:var(--serif);font-size:2rem;}
+  #mobClose{position:absolute;top:2rem;right:5%;font-size:3rem;color:var(--dourado);cursor:pointer;}
+
+  /* ===== RESPONSIVE ===== */
+  @media(max-width:1024px){
+    .hero-bg::after{background:linear-gradient(to bottom, rgba(253,251,249,0.9) 40%, rgba(253,251,249,0.6) 100%);}
+    .hero{align-items:flex-start;padding-top:120px;}
+    .hero-inner{max-width:100%;text-align:center;}
+    .credenciais{max-width:500px;margin:0 auto;}
+  }
+
+  @media(max-width:768px){
+    nav.links{display:none;}
+    .burger{display:flex;}
+    .exp-row{grid-template-columns:1fr;gap:2rem;}
+    .exp-row:nth-child(even) .exp-media{order:0;}
+    .sobre-grid{grid-template-columns:1fr;gap:3rem;}
+    .foot-main{grid-template-columns:1fr 1fr;gap:2rem;}
+  }
+
+  @media(max-width:480px){
+    .hero h1{font-size:2.4rem;}
+    .foot-main{grid-template-columns:1fr;}
+    .foot-bottom{flex-direction:column;text-align:center;gap:1rem;}
+  }
 </style>
 </head>
 <body>
 
 <header id="header">
-  <div class="logo-mark">
-    <img src="images/logo-premium-v3.png?update=final" alt="Dra. Luciana Granado">
-    <div class="logo-text">
-      <span class="l1">Dra. Luciana Granado</span>
-      <span class="l2">Odontologia Integrada</span>
-    </div>
-  </div>
+  <a href="#" class="logo-mark">
+    <img src="images/logo-premium-v3.png" alt="Dra. Luciana Granado">
+  </a>
   <nav class="links">
     <a href="#sobre">Sobre</a>
     <a href="#especializacoes">Especialidades</a>
     <a href="#resultados">Resultados</a>
     <a href="#contato">Contato</a>
   </nav>
-  <div class="nav-cta">
-    <a href="https://wa.me/5527997631575" target="_blank" class="btn solid">Agendar</a>
-    <div class="burger" id="burger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div>
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mob-head">
-    <div class="logo-text">
-      <span class="l1">Dra. Luciana Granado</span>
-    </div>
-    <div class="burger active" id="mobClose">
-      <span style="transform:rotate(45deg) translate(5px, 5px)"></span>
-      <span style="opacity:0"></span>
-      <span style="transform:rotate(-45deg) translate(5px, -5px)"></span>
-    </div>
-  </div>
-  <nav class="mob-links">
-    <a href="#sobre" class="mob-link"><span>01</span>Sobre</a>
-    <a href="#especializacoes" class="mob-link"><span>02</span>Especialidades</a>
-    <a href="#resultados" class="mob-link"><span>03</span>Resultados</a>
-    <a href="#contato" class="mob-link"><span>04</span>Contato</a>
-  </nav>
-  <div class="mob-footer">
-    <a href="https://wa.me/5527997631575" class="btn solid full">Agendamentos</a>
-  </div>
+<div id="mobileMenu">
+  <div id="mobClose">&times;</div>
+  <a href="#sobre" class="mob-link">Sobre</a>
+  <a href="#especializacoes" class="mob-link">Especialidades</a>
+  <a href="#resultados" class="mob-link">Resultados</a>
+  <a href="#contato" class="mob-link">Contato</a>
 </div>
 
 <section class="hero">
@@ -429,200 +269,140 @@
     <img src="images/dra-luciana-hero.jpg" alt="Dra. Luciana Granado">
   </div>
   <div class="container hero-content">
-    <div class="hero-inner">
-      <span class="eyebrow">Vila Velha · ES</span>
-      <h1>Cuidado e <em>excelência</em> no seu sorriso.</h1>
-      <p class="lead">Atendimento odontológico especializado em Endodontia, Ortodontia e Implantodontia com acolhimento e precisão.</p>
-      <div class="hero-ctas">
-        <a href="https://wa.me/5527997631575" target="_blank" class="btn solid">Agendar pelo WhatsApp</a>
-        <a href="tel:+5527997631575" class="btn">Ligar agora</a>
-      </div>
+    <div class="hero-inner reveal active">
+      <span class="eyebrow">Odontologia Integrada & Humanizada</span>
+      <h1>Cuidado completo para o seu <em>melhor sorriso.</em></h1>
+      <p class="lead">Especialista em Endodontia, Ortodontia e Implantodontia com foco no seu bem-estar em Vila Velha, ES.</p>
+      <a href="https://wa.me/5527997631575" target="_blank" class="btn solid">Agendar Consulta</a>
       <div class="credenciais">
+        <div><strong>CRO-ES</strong><span>5703</span></div>
         <div><strong>15+</strong><span>Anos de Experiência</span></div>
-        <div><strong>5k+</strong><span>Sorrisos Transformados</span></div>
-        <div><strong>3</strong><span>Especializações</span></div>
-      </div>
-      <div class="scroll-cue">
-        <div class="line"></div>
-        <span>Role para explorar</span>
+        <div><strong>Vila Velha</strong><span>Espírito Santo</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="especializacoes" id="especializacoes">
+<section id="especializacoes">
   <div class="container">
     <div class="sec-head reveal">
-      <span class="eyebrow">Expertise</span>
-      <h2>Áreas de Atuação Especializada</h2>
-      <p>Tratamentos conduzidos com tecnologia de ponta e o cuidado que você merece.</p>
+      <span class="eyebrow">Especialidades</span>
+      <h2>Tratamentos Especializados</h2>
     </div>
-    <div class="esp-grid reveal">
-      <div class="esp-card">
+    <div class="esp-grid">
+      <div class="esp-card reveal">
         <span class="esp-num">01</span>
         <h3>Endodontia</h3>
-        <p>Tratamento de canal especializado, focado em preservar seu dente natural com o máximo de conforto e tecnologia rotatória.</p>
+        <p>Tratamento de canal com tecnologia para o seu conforto e preservação do dente.</p>
       </div>
-      <div class="esp-card">
+      <div class="esp-card reveal">
         <span class="esp-num">02</span>
         <h3>Ortodontia</h3>
-        <p>Correção do alinhamento dental e funcional com aparelhos modernos, buscando harmonia facial e saúde bucal duradoura.</p>
+        <p>Correção do alinhamento dental com aparelhos modernos e discretos.</p>
       </div>
-      <div class="esp-card">
+      <div class="esp-card reveal">
         <span class="esp-num">03</span>
         <h3>Implantodontia</h3>
-        <p>Reabilitação oral completa com implantes de alta performance para devolver sua segurança ao falar, comer e sorrir.</p>
+        <p>Recuperação da função e estética com implantes seguros e duradouros.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="experiencias" id="procedimentos">
+<section class="experiencias">
   <div class="container">
-    <div class="sec-head light reveal">
-      <span class="eyebrow">Experiência</span>
-      <h2>Tratamentos Integrados</h2>
-    </div>
-    
     <div class="exp-row reveal">
-      <div class="exp-media"><img src="images/exp-canal.jpg" alt="Endodontia Avançada"></div>
+      <div class="exp-media">
+        <img src="images/exp-canal.jpg" alt="Endodontia">
+      </div>
       <div class="exp-text">
-        <span class="exp-tag">Endodontia</span>
-        <h3>Tratamento de Canal Sem Medo</h3>
-        <p>Utilizamos sistemas mecanizados e localizadores apicais de última geração, tornando o procedimento mais rápido, seguro e indolor.</p>
-        <a href="https://wa.me/5527997631575" class="saiba">Saber mais</a>
+        <h3>Tecnologia em Canal</h3>
+        <p>Utilizamos equipamentos de ponta para realizar tratamentos de canal mais rápidos, precisos e praticamente indolores.</p>
+        <a href="https://wa.me/5527997631575" target="_blank" class="saiba">Saber mais</a>
       </div>
     </div>
-
     <div class="exp-row reveal">
-      <div class="exp-media"><img src="images/exp-orto.jpg" alt="Ortodontia Estética"></div>
-      <div class="exp-text">
-        <span class="exp-tag">Ortodontia</span>
-        <h3>Alinhamento e Estética</h3>
-        <p>Do convencional ao estético, planejamos seu sorriso para que a funcionalidade e a beleza caminhem juntas em todas as fases da vida.</p>
-        <a href="https://wa.me/5527997631575" class="saiba">Saber mais</a>
+      <div class="exp-media">
+        <img src="images/exp-orto.jpg" alt="Ortodontia">
       </div>
-    </div>
-
-    <div class="proc-mini">
-      <div class="proc-mini-grid">
-        <div class="proc-mini-card reveal"><img src="images/mini-clareamento.jpg" alt="Clareamento"><div class="proc-mini-label">Clareamento</div></div>
-        <div class="proc-mini-card reveal"><img src="images/mini-protese.jpg" alt="Próteses"><div class="proc-mini-label">Próteses</div></div>
-        <div class="proc-mini-card reveal"><img src="images/mini-limpeza.jpg" alt="Prevenção"><div class="proc-mini-label">Prevenção</div></div>
-        <div class="proc-mini-card reveal"><img src="images/mini-restauracao.jpg" alt="Estética"><div class="proc-mini-label">Estética</div></div>
+      <div class="exp-text">
+        <h3>Ortodontia Moderna</h3>
+        <p>Alinhamos seu sorriso com planejamento digital, garantindo resultados mais previsíveis e estéticos.</p>
+        <a href="https://wa.me/5527997631575" target="_blank" class="saiba">Ver aparelhos</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="resultados" id="resultados">
+<section id="resultados">
   <div class="container">
     <div class="sec-head center reveal">
       <span class="eyebrow">Resultados</span>
       <h2>Transformações Reais</h2>
-      <p>Deslize para ver o impacto de um tratamento planejado.</p>
     </div>
-
     <div class="resultados-grid">
       <div class="compare-card reveal">
-        <div class="compare-slider" data-compare>
-          <div class="compare-before"><img src="images/caso1-depois.jpg" alt="Depois"></div>
-          <div class="compare-after"><img src="images/caso1-antes.jpg" alt="Antes"></div>
-          <div class="compare-handle"></div>
+        <div class="compare-slider">
+          <div class="compare-before"><img src="images/caso1-antes.jpg" alt="Antes"></div>
+          <div class="compare-after"><img src="images/caso1-depois.jpg" alt="Depois"></div>
           <input type="range" min="0" max="100" value="50" class="compare-range">
         </div>
-        <div class="compare-info">
-          <h4>Estética Dental</h4>
-          <p>Clareamento e Facetas</p>
-        </div>
+        <div class="compare-info"><h4>Estética Dental</h4></div>
       </div>
-
       <div class="compare-card reveal">
-        <div class="compare-slider" data-compare>
-          <div class="compare-before"><img src="images/caso2-depois.jpg" alt="Depois"></div>
-          <div class="compare-after"><img src="images/caso2-antes.jpg" alt="Antes"></div>
-          <div class="compare-handle"></div>
+        <div class="compare-slider">
+          <div class="compare-before"><img src="images/caso2-antes.jpg" alt="Antes"></div>
+          <div class="compare-after"><img src="images/caso2-depois.jpg" alt="Depois"></div>
           <input type="range" min="0" max="100" value="50" class="compare-range">
         </div>
-        <div class="compare-info">
-          <h4>Reabilitação Oral</h4>
-          <p>Funcionalidade e Estética</p>
-        </div>
+        <div class="compare-info"><h4>Reabilitação Oral</h4></div>
       </div>
-
       <div class="compare-card reveal">
-        <div class="compare-slider" data-compare>
-          <div class="compare-before"><img src="images/caso3-depois-implante.jpg" alt="Depois"></div>
-          <div class="compare-after"><img src="images/caso3-antes-implante.jpg" alt="Antes"></div>
-          <div class="compare-handle"></div>
+        <div class="compare-slider">
+          <div class="compare-before"><img src="images/caso3-antes.jpg" alt="Antes"></div>
+          <div class="compare-after"><img src="images/caso3-depois.jpg" alt="Depois"></div>
           <input type="range" min="0" max="100" value="50" class="compare-range">
         </div>
-        <div class="compare-info">
-          <h4>Implante Dentário</h4>
-          <p>Saúde e Autoestima</p>
-        </div>
+        <div class="compare-info"><h4>Implantes</h4></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sobre" id="sobre">
+<section id="sobre">
   <div class="container">
     <div class="sobre-grid">
       <div class="sobre-img reveal">
         <img src="images/dra-luciana-sobre.jpg" alt="Dra. Luciana Granado">
       </div>
       <div class="sobre-text reveal">
-        <span class="eyebrow">Sobre a Doutora</span>
-        <h2>Especialista dedicada ao seu bem-estar.</h2>
-        <p>Dra. Luciana Granado é cirurgiã-dentista com especialização em Endodontia, Ortodontia e Implantodontia. Sua prática combina o rigor técnico com uma abordagem humanizada para devolver a alegria de sorrir.</p>
-        <p>Seu compromisso é oferecer uma Odontologia Integrada, onde a tecnologia de ponta e o acolhimento andam juntos para devolver não apenas a função e a estética, mas a satisfação de cada paciente.</p>
-        <div class="sobre-cta">
-          <a href="https://wa.me/5527997631575" target="_blank" class="btn solid">Falar no WhatsApp</a>
-          <div class="assinatura">
-            Dra. Luciana Granado
-            <span>CRO-ES 5703</span>
-          </div>
-        </div>
+        <span class="eyebrow">A Profissional</span>
+        <h2>Dra. Luciana Granado</h2>
+        <p>Especialista em Endodontia, Ortodontia e Implantodontia, dedicada a oferecer um atendimento que une técnica e acolhimento.</p>
+        <p>Nosso consultório em Vila Velha é preparado para cuidar de você e da sua família com toda a segurança e tecnologia necessária.</p>
+        <a href="https://wa.me/5527997631575" target="_blank" class="btn solid">Falar com a Doutora</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="contato" id="contato">
+<section id="contato">
   <div class="container">
     <div class="contato-grid">
       <div class="contato-info reveal">
         <span class="eyebrow">Contato</span>
-        <h2>Agende sua consulta hoje mesmo.</h2>
-        
+        <h2>Agende sua visita</h2>
         <div class="contato-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <div>
-            <h5>Telefone e WhatsApp</h5>
-            <a href="https://wa.me/5527997631575">+55 27 99763-1575</a>
-          </div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div><h5>WhatsApp</h5><p>(27) 99763-1575</p></div>
         </div>
-
         <div class="contato-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <div>
-            <h5>Endereço</h5>
-            <p>Av. Henrique Moscoso, 1069, Sala 5<br>Centro, Vila Velha — ES</p>
-          </div>
-        </div>
-
-        <div class="contato-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          <div>
-            <h5>Horário de Atendimento</h5>
-            <p>Segunda a Sexta: 08:00 às 18:00</p>
-          </div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><h5>Endereço</h5><p>Av. Henrique Moscoso, 1069, Sala 5, Vila Velha — ES</p></div>
         </div>
       </div>
-
       <div class="mapa-wrap reveal">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.071536444853!2d-40.29413232392415!3d-20.33869275101031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDIwJzE5LjMiUyA0MMKwMTcnMzAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1710432000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.071536444853!2d-40.29413232392415!3d-20.33869275101031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDIwJzE5LjMiUyA0MMKwMTcnMzAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1710432000000!5m2!1spt-BR!2sbr"></iframe>
       </div>
     </div>
   </div>
@@ -632,35 +412,22 @@
   <div class="container">
     <div class="foot-main">
       <div class="foot-logo">
-        <div class="logo-text">
-          <span class="l1">Dra. Luciana Granado</span>
-          <span class="l2">Odontologia Integrada</span>
-        </div>
-        <p>Excelência técnica e atendimento humanizado em Vila Velha.</p>
+        <h6 style="color:var(--dourado); font-size:1.2rem;">Dra. Luciana Granado</h6>
+        <p>Odontologia Integrada em Vila Velha.</p>
       </div>
       <div class="foot-col">
-        <h6>Navegação</h6>
+        <h6>Links</h6>
         <a href="#sobre">Sobre</a>
-        <a href="#especializacoes">Especialidades</a>
         <a href="#resultados">Resultados</a>
         <a href="#contato">Contato</a>
       </div>
       <div class="foot-col">
-        <h6>Especialidades</h6>
-        <a href="#especializacoes">Endodontia</a>
-        <a href="#especializacoes">Ortodontia</a>
-        <a href="#especializacoes">Implantodontia</a>
-      </div>
-      <div class="foot-col">
-        <h6>Social</h6>
-        <div class="social-links">
-          <a href="https://instagram.com/dralucianagranado" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-        </div>
+        <h6>Legal</h6>
+        <p>CRO-ES 5703</p>
       </div>
     </div>
     <div class="foot-bottom">
       <p>© 2026 Dra. Luciana Granado. Todos os direitos reservados.</p>
-      <p>Desenvolvido com excelência.</p>
     </div>
   </div>
 </footer>
@@ -674,57 +441,32 @@
   const burger = document.getElementById('burger');
   const mobClose = document.getElementById('mobClose');
   const mobileMenu = document.getElementById('mobileMenu');
-  let lastScroll = 0;
 
   window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    if(currentScroll > 80) header.classList.add('scrolled');
+    if(window.pageYOffset > 80) header.classList.add('scrolled');
     else header.classList.remove('scrolled');
-    
-    if(currentScroll > lastScroll && currentScroll > 500) header.classList.add('hide-nav');
-    else header.classList.remove('hide-nav');
-    
-    lastScroll = currentScroll;
   });
 
-  burger.addEventListener('click', () => mobileMenu.classList.add('active'));
-  mobClose.addEventListener('click', () => mobileMenu.classList.remove('active'));
+  burger.addEventListener('click', () => mobileMenu.style.display = 'flex');
+  mobClose.addEventListener('click', () => mobileMenu.style.display = 'none');
   document.querySelectorAll('.mob-link').forEach(link => {
-    link.addEventListener('click', () => mobileMenu.classList.remove('active'));
+    link.addEventListener('click', () => mobileMenu.style.display = 'none');
   });
 
-  const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        entry.target.classList.add('active');
-        observer.unobserve(entry.target);
-      }
+      if(entry.isIntersecting) entry.target.classList.add('active');
     });
-  }, observerOptions);
+  }, { threshold: 0.1 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  document.querySelectorAll('[data-compare]').forEach(el => {
-    const after = el.querySelector('.compare-after');
-    const range = el.querySelector('.compare-range');
-    const handle = el.querySelector('.compare-handle');
-    
-    const update = (val) => {
-      after.style.clipPath = `inset(0 0 0 ${val}%)`; // Ajustado para que o 'Depois' (dentes bons) fique à esquerda/base e o 'Antes' (dentes ruins) seja revelado pelo slider à direita
-      handle.style.left = `${val}%`;
-    };
-    
-    // Invertendo a lógica para que Antes (ruim) fique por cima e Depois (bom) por baixo, ou vice-versa conforme solicitado
-    // Usuário pediu: "antes dentes ruins e depois dentes bons"
-    // No slider, o 'before' costuma ser o fundo e o 'after' o que desliza.
-    // Vou colocar o 'Depois' (Bom) como base e o 'Antes' (Ruim) como a camada que desliza.
-    
-    range.addEventListener('input', (e) => update(e.target.value));
-    range.addEventListener('change', (e) => update(e.target.value));
-    
-    // Inicializar
-    update(50);
+  document.querySelectorAll('.compare-range').forEach(range => {
+    range.addEventListener('input', (e) => {
+      const slider = e.target.parentElement;
+      const before = slider.querySelector('.compare-before');
+      before.style.width = e.target.value + '%';
+    });
   });
 </script>
 </body>
