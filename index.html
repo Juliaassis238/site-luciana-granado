@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Dra. Luciana Granado — Odontologia Integrada | Vila Velha ES</title>
-<meta name="description" content="Dra. Luciana Granado CRO-ES 5703. Endodontia, Ortodontia e Implantodontia em Vila Velha.">
+<title>Dra. Luciana Granado — Odontologia Especializada | Vila Velha ES</title>
+<meta name="description" content="Dra. Luciana Granado CRO-ES 5703. Especialista em Endodontia, Ortodontia e Implantodontia em Vila Velha, ES.">
 <meta name="theme-color" content="#0e0c0b">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23c9a15a' d='M30 15c-10 0-15 10-14 23 1 17 6 37 12 47 3 5 8 3 9-5 1-10 3-20 13-20s12 10 13 20c1 8 6 10 9 5 6-10 11-30 12-47 1-13-4-23-14-23-8 0-12 5-20 5s-8-5-20-5Z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,6 +29,7 @@
     width: 100%;
     overflow-x: hidden;
     position: relative;
+    scroll-behavior: smooth;
   }
   body{
     font-family:var(--sans);
@@ -131,9 +132,16 @@
 
   .resultados-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:2.5rem;}
   .compare-slider{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:ew-resize;}
-  .compare-before{position:absolute;inset:0;z-index:1;width:50%;overflow:hidden;border-right:2px solid var(--branco);}
-  .compare-before img, .compare-after img{width:100%;height:100%;object-fit:cover;}
-  .compare-range{position:absolute;inset:0;width:100%;height:100%;opacity:0;z-index:10;cursor:pointer;}
+  .compare-after{position:absolute;inset:0;z-index:1;width:100%;}
+  .compare-before{position:absolute;inset:0;z-index:2;width:50%;overflow:hidden;border-right:2px solid var(--branco);}
+  .compare-before img, .compare-after img{width:100%;height:100%;object-fit:cover;pointer-events:none;}
+  /* Garantir que as imagens tenham o mesmo tamanho dentro do container */
+  .compare-before img { width: auto; height: 100%; max-width: none; }
+  .compare-after img { width: 100%; height: 100%; }
+  
+  .compare-range{
+    position:absolute;inset:0;width:100%;height:100%;opacity:0;z-index:10;cursor:pointer;
+  }
   .compare-info{padding:1rem 0;}
 
   .sobre-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;align-items:center;}
@@ -211,13 +219,13 @@
   </div>
   <div class="container hero-content">
     <div class="hero-inner reveal active">
-      <span class="eyebrow">Odontologia Integrada & Humanizada</span>
-      <h1>Cuidado completo para o seu <em>melhor sorriso.</em></h1>
-      <p class="lead">Especialista em Endodontia, Ortodontia e Implantodontia com foco no seu bem-estar em Vila Velha, ES.</p>
+      <span class="eyebrow">Odontologia Especializada</span>
+      <h1>Excelência em cada <em>detalhe do seu sorriso.</em></h1>
+      <p class="lead">Especialista em Endodontia, Ortodontia e Implantodontia. Tecnologia e conhecimento para sua saúde bucal em Vila Velha, ES.</p>
       <a href="https://wa.me/5527997631575" target="_blank" class="btn solid">Agendar Consulta</a>
       <div class="credenciais">
         <div><strong>CRO-ES</strong><span>5703</span></div>
-        <div><strong>15+</strong><span>Anos de Experiência</span></div>
+        <div><strong>Especialista</strong><span>Tripla Formação</span></div>
         <div><strong>Vila Velha</strong><span>Espírito Santo</span></div>
       </div>
     </div>
@@ -228,23 +236,23 @@
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">Especialidades</span>
-      <h2>Tratamentos</h2>
+      <h2>Nossos Tratamentos</h2>
     </div>
     <div class="esp-grid">
       <div class="esp-card reveal">
         <span class="esp-num">01</span>
         <h3>Endodontia</h3>
-        <p>Tratamento de canal especializado e humanizado.</p>
+        <p>Especialista no tratamento de canais, focando na preservação do dente natural e alívio de dores complexas com técnicas avançadas.</p>
       </div>
       <div class="esp-card reveal">
         <span class="esp-num">02</span>
         <h3>Ortodontia</h3>
-        <p>Alinhamento dental com as melhores técnicas.</p>
+        <p>Especialista em aparelhos fixos e removíveis para correção da mordida e alinhamento do sorriso em crianças e adultos.</p>
       </div>
       <div class="esp-card reveal">
         <span class="esp-num">03</span>
         <h3>Implantodontia</h3>
-        <p>Recuperação da função mastigatória e estética.</p>
+        <p>Especialista na reposição de dentes perdidos através de implantes osseointegrados, devolvendo a função mastigatória e a estética.</p>
       </div>
     </div>
   </div>
@@ -254,21 +262,21 @@
   <div class="container">
     <div class="exp-row reveal">
       <div class="exp-media">
-        <img src="images/exp-canal.jpg" alt="Endodontia">
+        <img src="images/exp-canal-v2.jpg" alt="Endodontia Especializada">
       </div>
       <div class="exp-text">
-        <h3>Tecnologia em Canal</h3>
-        <p>Tratamentos precisos e confortáveis para preservar sua saúde bucal.</p>
+        <h3>Endodontia Especializada</h3>
+        <p>Utilizamos tecnologia de ponta para realizar tratamentos de canal seguros, eliminando infecções e preservando a estrutura dentária original com o máximo de conforto.</p>
         <a href="https://wa.me/5527997631575" target="_blank" class="saiba">Saber mais</a>
       </div>
     </div>
     <div class="exp-row reveal">
       <div class="exp-media">
-        <img src="images/exp-orto.jpg" alt="Ortodontia">
+        <img src="images/exp-orto-v2.jpg" alt="Ortodontia Moderna">
       </div>
       <div class="exp-text">
-        <h3>Ortodontia Moderna</h3>
-        <p>Planejamento detalhado para um sorriso perfeito e funcional.</p>
+        <h3>Ortodontia e Ortopedia</h3>
+        <p>Correção funcional e estética das arcadas dentárias, tratando desde o desalinhamento simples até problemas complexos de oclusão para um sorriso saudável.</p>
         <a href="https://wa.me/5527997631575" target="_blank" class="saiba">Ver mais</a>
       </div>
     </div>
@@ -278,33 +286,34 @@
 <section id="resultados">
   <div class="container">
     <div class="sec-head center reveal">
-      <span class="eyebrow">Resultados</span>
-      <h2>Transformações</h2>
+      <span class="eyebrow">Casos Clínicos</span>
+      <h2>Antes e Depois</h2>
+      <p style="color:var(--texto-suave); margin-top:1rem;">Arraste para ver a transformação real de nossos pacientes.</p>
     </div>
     <div class="resultados-grid">
       <div class="compare-card reveal">
         <div class="compare-slider">
-          <div class="compare-before"><img src="images/caso1-depois.jpg" alt="Antes"></div>
-          <div class="compare-after"><img src="images/caso1-antes.jpg" alt="Depois"></div>
+          <div class="compare-after"><img src="images/caso1-depois-v2.jpg" alt="Depois"></div>
+          <div class="compare-before"><img src="images/caso1-antes-v2.jpg" alt="Antes"></div>
           <input type="range" min="0" max="100" value="50" class="compare-range">
         </div>
         <div class="compare-info"><h4>Estética Dental</h4></div>
       </div>
       <div class="compare-card reveal">
         <div class="compare-slider">
-          <div class="compare-before"><img src="images/caso2-depois.jpg" alt="Antes"></div>
-          <div class="compare-after"><img src="images/caso2-antes.jpg" alt="Depois"></div>
+          <div class="compare-after"><img src="images/caso2-depois-v2.jpg" alt="Depois"></div>
+          <div class="compare-before"><img src="images/caso2-antes-v2.jpg" alt="Antes"></div>
           <input type="range" min="0" max="100" value="50" class="compare-range">
         </div>
         <div class="compare-info"><h4>Reabilitação Oral</h4></div>
       </div>
       <div class="compare-card reveal">
         <div class="compare-slider">
-          <div class="compare-before"><img src="images/caso3-depois.jpg" alt="Antes"></div>
-          <div class="compare-after"><img src="images/caso3-antes.jpg" alt="Depois"></div>
+          <div class="compare-after"><img src="images/caso3-depois-v2.jpg" alt="Depois"></div>
+          <div class="compare-before"><img src="images/caso3-antes-v2.jpg" alt="Antes"></div>
           <input type="range" min="0" max="100" value="50" class="compare-range">
         </div>
-        <div class="compare-info"><h4>Implantes</h4></div>
+        <div class="compare-info"><h4>Implantodontia</h4></div>
       </div>
     </div>
   </div>
@@ -317,9 +326,13 @@
         <img src="images/dra-luciana-sobre.jpg" alt="Dra. Luciana Granado">
       </div>
       <div class="sobre-text reveal">
-        <span class="eyebrow">A Profissional</span>
+        <span class="eyebrow">Sobre a Doutora</span>
         <h2>Dra. Luciana Granado</h2>
-        <p>Especialista dedicada a oferecer o melhor da odontologia com um olhar humano e cuidadoso.</p>
+        <p>Cirurgiã-Dentista inscrita no CRO-ES 5703, a Dra. Luciana Granado é uma profissional com tripla especialização: Endodontia, Ortodontia e Implantodontia.</p>
+        <p>Com anos de experiência em Vila Velha, seu consultório é pautado pela ética, tecnologia e um atendimento humanizado, buscando sempre a melhor solução para a saúde e estética bucal de seus pacientes.</p>
+        <blockquote style="border-left: 3px solid var(--dourado); padding-left: 1rem; margin: 1.5rem 0; font-style: italic; color: var(--texto-suave);">
+          "Que possamos sempre conhecer uns aos outros com um sorriso, pois o sorriso é o começo do amor!"
+        </blockquote>
         <a href="https://wa.me/5527997631575" target="_blank" class="btn solid">Falar com a Doutora</a>
       </div>
     </div>
@@ -338,7 +351,11 @@
         </div>
         <div class="contato-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <div><h5>Endereço</h5><p>Av. Henrique Moscoso, 1069, Vila Velha — ES</p></div>
+          <div><h5>Endereço</h5><p>Av. Henrique Moscoso, 1069, Centro de Vila Velha — ES</p></div>
+        </div>
+        <div class="contato-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <div><h5>Horário</h5><p>Segunda a Sexta: 09:00 - 19:00</p></div>
         </div>
       </div>
       <div class="mapa-wrap reveal">
@@ -351,47 +368,58 @@
 <footer>
   <div class="container">
     <div class="foot-bottom">
-      <p>© 2026 Dra. Luciana Granado. Todos os direitos reservados.</p>
+      <p>© 2026 Dra. Luciana Granado. Todos os direitos reservados. CRO-ES 5703</p>
     </div>
   </div>
 </footer>
 
 <a href="https://wa.me/5527997631575" target="_blank" class="wa-float">
-  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.13-1.54a9.85 9.85 0 004.91 1.31h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm0 17.9h-.01a8.02 8.02 0 01-4.08-1.12l-.29-.17-3.05.92.91-2.98-.19-.3a8 8 0 01-1.24-4.34c0-4.42 3.6-8.02 8.03-8.02 2.14 0 4.16.84 5.67 2.35a7.96 7.96 0 012.34 5.68c0 4.43-3.6 8-8.09 8zm4.4-6c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.8-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02 0 1.19.87 2.34.99 2.5.12.16 1.71 2.61 4.15 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"/></svg>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.672 1.433 5.66 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
 
 <script>
-  const header = document.getElementById('header');
-  const burger = document.getElementById('burger');
-  const mobClose = document.getElementById('mobClose');
-  const mobileMenu = document.getElementById('mobileMenu');
-
+  // Header scroll effect
   window.addEventListener('scroll', () => {
-    if(window.pageYOffset > 50) header.classList.add('scrolled');
+    const header = document.getElementById('header');
+    if (window.scrollY > 50) header.classList.add('scrolled');
     else header.classList.remove('scrolled');
   });
 
-  burger.addEventListener('click', () => mobileMenu.style.display = 'flex');
-  mobClose.addEventListener('click', () => mobileMenu.style.display = 'none');
-  document.querySelectorAll('.mob-link').forEach(link => {
-    link.addEventListener('click', () => mobileMenu.style.display = 'none');
+  // Mobile Menu
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobClose = document.getElementById('mobClose');
+  const mobLinks = document.querySelectorAll('.mob-link');
+
+  burger.onclick = () => mobileMenu.style.display = 'flex';
+  mobClose.onclick = () => mobileMenu.style.display = 'none';
+  mobLinks.forEach(link => {
+    link.onclick = () => mobileMenu.style.display = 'none';
   });
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) entry.target.classList.add('active');
+  // Reveal Animation
+  const reveal = () => {
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach(el => {
+      const windowHeight = window.innerHeight;
+      const revealTop = el.getBoundingClientRect().top;
+      const revealPoint = 150;
+      if (revealTop < windowHeight - revealPoint) el.classList.add('active');
     });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  };
+  window.addEventListener('scroll', reveal);
+  reveal();
 
-  document.querySelectorAll('.compare-range').forEach(range => {
-    range.addEventListener('input', (e) => {
-      const slider = e.target.parentElement;
-      const before = slider.querySelector('.compare-before');
+  // Compare Slider Logic
+  const sliders = document.querySelectorAll('.compare-slider');
+  sliders.forEach(slider => {
+    const range = slider.querySelector('.compare-range');
+    const before = slider.querySelector('.compare-before');
+    range.oninput = (e) => {
       before.style.width = e.target.value + '%';
-    });
+    };
   });
 </script>
+
 </body>
 </html>
- 
