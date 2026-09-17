@@ -101,6 +101,7 @@
   .hero-inner{max-width:520px;padding:2rem 0;}
   .hero h1{font-size:clamp(2.5rem, 6vw, 4.8rem);letter-spacing:-.02em;}
   .hero p.lead{max-width:420px;font-size:1rem;line-height:1.7;}
+  .hero-bg img{object-position:center center;}
   .hero .btn{border-radius:999px;padding:.95rem 1.8rem;box-shadow:0 10px 24px rgba(201,161,90,.22);}
   .hero .credenciais{display:none;}
   .hero-content{position:relative;z-index:2;width:100%;}
@@ -185,9 +186,18 @@
   .reveal.active{opacity:1;transform:translateY(0);}
 
   @media(max-width:1024px){
-    .hero{align-items:flex-start;padding-top:120px;}
-    .hero-inner{max-width:100%;text-align:center;}
+    .hero{align-items:flex-start;padding-top:120px;min-height:760px;}
+    .hero-inner{max-width:560px;text-align:left;}
+    .hero-bg::after{background:linear-gradient(180deg, rgba(253,251,249,.92) 0%, rgba(253,251,249,.68) 40%, rgba(253,251,249,.18) 100%);}
     .credenciais{max-width:400px;margin:0 auto;}
+  }
+  @media(max-width:600px){
+    .hero{min-height:680px;padding-top:104px;}
+    .hero-inner{padding:1.5rem 0;text-align:left;}
+    .hero h1{font-size:clamp(2.35rem, 12vw, 3.45rem);max-width:310px;}
+    .hero p.lead{font-size:.95rem;max-width:290px;margin-bottom:1.5rem;}
+    .hero-bg img{object-position:62% center;}
+    .hero-bg::after{background:linear-gradient(180deg, rgba(253,251,249,.95) 0%, rgba(253,251,249,.72) 46%, rgba(253,251,249,.22) 100%);}
   }
 
   @media(max-width:768px){
@@ -224,14 +234,14 @@
 
 <section class="hero">
   <div class="hero-bg">
-    <img src="images/hero-editorial.jpg" alt="Dra. Luciana Granado em seu consultório">
+    <img src="images/dra-luciana-hero.jpg" alt="Dra. Luciana Granado">
   </div>
   <div class="container hero-content">
     <div class="hero-inner reveal active">
       <span class="eyebrow">Odontologia Especializada</span>
       <h1>Excelência em cada <em>detalhe do seu sorriso.</em></h1>
-      <p class="lead">Especialista em Endodontia, Ortodontia e Implantodontia. Tecnologia e conhecimento para sua saúde bucal em Vila Velha, ES.</p>
-      <a href="https://wa.me/5527997631575" target="_blank" class="btn solid">Agendar Consulta</a>
+      <p class="lead">Odontologia especializada, precisa e humanizada em Vila Velha.</p>
+      <a href="https://wa.me/5527997631575" target="_blank" class="btn solid">Agendar consulta</a>
       <div class="credenciais">
         <div><strong>CRO-ES</strong><span>5703</span></div>
         <div><strong>Especialista</strong><span>Tripla Formação</span></div>
@@ -320,8 +330,8 @@
           <button class="tab-btn" data-target="after">Depois</button>
         </div>
         <div class="compare-visual">
-          <img src="images/caso1-antes-v2.jpg" alt="Antes" class="active" data-type="before">
-          <img src="images/caso1-depois-v2.jpg" alt="Depois" data-type="after">
+          <img src="images/caso1-antes.jpg" alt="Antes" class="active" data-type="before">
+          <img src="images/caso1-depois.jpg" alt="Depois" data-type="after">
         </div>
         <div class="compare-info">
           <h4>Estética Dental</h4>
@@ -335,8 +345,8 @@
           <button class="tab-btn" data-target="after">Depois</button>
         </div>
         <div class="compare-visual">
-          <img src="images/caso2-antes-v3.jpg" alt="Antes" class="active" data-type="before">
-          <img src="images/caso2-depois-v3.jpg" alt="Depois" data-type="after">
+          <img src="images/caso2-antes.jpg" alt="Antes" class="active" data-type="before">
+          <img src="images/caso2-depois.jpg" alt="Depois" data-type="after">
         </div>
         <div class="compare-info">
           <h4>Reabilitação Oral</h4>
@@ -350,8 +360,8 @@
           <button class="tab-btn" data-target="after">Depois</button>
         </div>
         <div class="compare-visual">
-          <img src="images/caso3-antes-v3.jpg" alt="Antes" class="active" data-type="before">
-          <img src="images/caso3-depois-v3.jpg" alt="Depois" data-type="after">
+          <img src="images/caso3-antes.jpg" alt="Antes" class="active" data-type="before">
+          <img src="images/caso3-depois.jpg" alt="Depois" data-type="after">
         </div>
         <div class="compare-info">
           <h4>Implantodontia</h4>
