@@ -1,396 +1,264 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Dra. Luciana Granado — Odontologia Integrada | Vila Velha ES</title>
-<meta name="description" content="Dra. Luciana Granado, cirurgiã-dentista CRO-ES 5703. Especialista em Endodontia, Ortodontia e Implantodontia em Vila Velha, ES. Atendimento humanizado e especializado.">
-<meta name="theme-color" content="#0e0c0b">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23c9a15a' d='M30 15c-10 0-15 10-14 23 1 17 6 37 12 47 3 5 8 3 9-5 1-10 3-20 13-20s12 10 13 20c1 8 6 10 9 5 6-10 11-30 12-47 1-13-4-23-14-23-8 0-12 5-20 5s-8-5-20-5Z'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --preto:#0c0a09;
-    --preto-2:#161311;
-    --dourado:#c9a15a;
-    --dourado-claro:#e4c98a;
-    --rose:#e9dcd3;
-    --rose-2:#f3e9e2;
-    --branco:#fdfbf9;
-    --texto-escuro:#231f1c;
-    --texto-suave:#6b6058;
-    --linha:rgba(201,161,90,0.35);
-    --serif:'Cormorant Garamond', serif;
-    --sans:'Jost', sans-serif;
-    --header-h:84px;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;scroll-padding-top:var(--header-h);}
-  body{
-    font-family:var(--sans);
-    color:var(--texto-escuro);
-    background:var(--branco);
-    overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
-    width:100%;
-  }
-  img{max-width:100%;display:block;height:auto;}
-  a{text-decoration:none;color:inherit;}
-  
-  .container{width:100%;max-width:1240px;margin:0 auto;padding:0 4.5%;}
-  .btn{
-    display:inline-flex;align-items:center;justify-content:center;
-    padding:0.8rem 1.8rem;
-    font-family:var(--sans);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;
-    border:1px solid var(--dourado);
-    color:var(--dourado);
-    background:transparent;
-    transition:all .3s ease;
-    cursor:pointer;
-    border-radius:2px;
-  }
-  .btn.solid{background:var(--dourado);color:var(--preto);}
-  .btn.on-light{border-color:var(--texto-escuro);color:var(--texto-escuro);}
-  .btn.full{width:100%;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luciana Granado | Odontologia Integrada em Vila Velha</title>
+  <meta name="description" content="Endodontia, ortodontia e implantodontia com a Dra. Luciana Granado em Vila Velha. Cuidado próximo, tecnologia e um plano feito para você.">
+  <meta name="theme-color" content="#f4f7f4">
+  <link rel="icon" href="images/logo-premium-v3.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #10221d;
+      --muted: #62716b;
+      --green: #18a66a;
+      --green-dark: #0f8151;
+      --mint: #dcf3e5;
+      --paper: #f5f8f5;
+      --white: #ffffff;
+      --line: #dce8df;
+      --display: "Manrope", sans-serif;
+      --body: "DM Sans", sans-serif;
+      --ease: cubic-bezier(.22, 1, .36, 1);
+      --header: 78px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header) + 24px); }
+    body { background: var(--paper); color: var(--ink); font-family: var(--body); line-height: 1.55; overflow-x: hidden; }
+    body.menu-open { overflow: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    .container { width: min(1180px, calc(100% - 72px)); margin-inline: auto; }
+    .eyebrow { color: var(--green-dark); font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .serif { font-family: var(--display); }
+    .btn { align-items: center; border: 1px solid var(--ink); border-radius: 99px; display: inline-flex; font-size: .86rem; font-weight: 700; gap: .55rem; justify-content: center; padding: .85rem 1.3rem; transition: transform .2s var(--ease), background .2s ease, color .2s ease, border-color .2s ease; }
+    .btn:hover { transform: translateY(-3px); }
+    .btn-primary { background: var(--green); border-color: var(--green); color: var(--white); box-shadow: 0 9px 18px rgba(24,166,106,.18); }
+    .btn-primary:hover { background: var(--green-dark); border-color: var(--green-dark); }
+    .btn-ghost { background: transparent; }
+    .btn-ghost:hover { background: var(--white); }
+    .btn svg { height: 16px; width: 16px; }
 
-  /* ===== HEADER ===== */
-  header{
-    position:fixed;top:0;left:0;right:0;z-index:100;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:0.8rem 4.5%;
-    background:rgba(12,10,9,0.9);
-    backdrop-filter:blur(10px);
-    transition: all 0.3s ease;
-  }
-  header.scrolled{
-    background:rgba(12,10,9,0.98);
-    padding:0.5rem 4.5%;
-  }
-  .logo-mark img{
-    height:55px;
-    width:auto;
-    display:block;
-  }
-  nav.links{display:flex;gap:1.5rem;}
-  nav.links a{
-    color:#e8ddd0;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
-    font-weight:400;
-  }
-  nav.links a:hover{color:var(--dourado-claro);}
-  .nav-cta{display:flex;align-items:center;gap:1rem;}
-  .burger{
-    display:none;
-    flex-direction:column;
-    gap:6px;
-    cursor:pointer;
-    padding:10px;
-    z-index: 201;
-  }
-  .burger span{width:28px;height:2px;background:var(--dourado-claro);transition:all .3s ease;}
+    header { align-items: center; background: rgba(245,248,245,.88); border-bottom: 1px solid transparent; display: flex; height: var(--header); justify-content: space-between; left: 0; padding: 0 max(36px, calc((100% - 1180px) / 2)); position: fixed; right: 0; top: 0; transition: background .25s ease, border-color .25s ease, box-shadow .25s ease; z-index: 20; }
+    header.scrolled { background: rgba(255,255,255,.94); border-color: var(--line); box-shadow: 0 8px 24px rgba(16,34,29,.05); }
+    .brand { align-items: center; display: flex; gap: .6rem; }
+    .brand img { background: var(--ink); border-radius: 50%; height: 34px; object-fit: cover; object-position: 50% 12%; padding: 3px; width: 34px; }
+    .brand-name { font-family: var(--display); font-size: .9rem; font-weight: 800; letter-spacing: -.03em; line-height: 1.05; }
+    .brand-name small { color: var(--muted); display: block; font-family: var(--body); font-size: .5rem; font-weight: 700; letter-spacing: .09em; margin-top: 3px; text-transform: uppercase; }
+    .desktop-nav { align-items: center; display: flex; gap: 2.15rem; margin-left: auto; margin-right: 2rem; }
+    .desktop-nav a { color: #4d5c56; font-size: .82rem; font-weight: 600; transition: color .2s ease; }
+    .desktop-nav a:hover { color: var(--green-dark); }
+    .header-cta { font-size: .78rem; padding: .65rem 1rem; }
+    .menu-toggle { background: transparent; border: 0; cursor: pointer; display: none; height: 42px; width: 42px; }
+    .menu-toggle span { background: var(--ink); display: block; height: 2px; margin: 5px auto; transition: transform .25s ease; width: 21px; }
+    .mobile-menu { align-items: center; background: var(--paper); display: flex; flex-direction: column; gap: 1.7rem; inset: 0; justify-content: center; opacity: 0; pointer-events: none; position: fixed; transform: translateY(-12px); transition: opacity .25s ease, transform .25s ease; z-index: 19; }
+    .mobile-menu.open { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .mobile-menu a { font-family: var(--display); font-size: 2rem; font-weight: 700; }
 
-  @media(max-width:1024px){
-    nav.links{display:none;}
-    .burger{display:flex;}
-    header .btn{display:none;}
-    .logo-mark img{height:45px;}
-  }
+    .hero { min-height: 760px; padding-top: var(--header); position: relative; }
+    .hero-inner { align-items: center; display: grid; gap: 5rem; grid-template-columns: .95fr 1.05fr; min-height: 682px; }
+    .hero-copy { padding-bottom: 2rem; }
+    h1 { font-family: var(--display); font-size: clamp(2.7rem, 5.2vw, 4.55rem); letter-spacing: -.065em; line-height: 1.06; margin: 1.1rem 0 1.35rem; max-width: 600px; }
+    h1 mark, h2 mark { background: linear-gradient(transparent 62%, var(--mint) 62%); color: var(--green-dark); padding: 0 .04em; }
+    .hero-lead { color: var(--muted); font-size: 1.02rem; max-width: 480px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.8rem; }
+    .metrics { border-top: 1px solid var(--line); display: flex; gap: 2rem; margin-top: 3.5rem; max-width: 430px; padding-top: 1.15rem; }
+    .metric { border-right: 1px solid var(--line); padding-right: 2rem; }
+    .metric:last-child { border: 0; padding-right: 0; }
+    .metric strong { display: block; font-family: var(--display); font-size: 1.18rem; letter-spacing: -.04em; }
+    .metric span { color: var(--muted); display: block; font-size: .65rem; line-height: 1.25; margin-top: .18rem; max-width: 105px; }
+    .hero-visual { align-items: center; display: flex; justify-content: center; min-height: 600px; position: relative; }
+    .hero-visual::before { border: 1px solid rgba(24,166,106,.65); border-radius: 48% 52% 48% 52%; content: ""; height: 500px; position: absolute; transform: rotate(10deg); width: 390px; }
+    .hero-visual::after { border: 1px dashed #cfe2d5; border-radius: 48% 52% 48% 52%; content: ""; height: 550px; position: absolute; transform: rotate(-11deg); width: 430px; }
+    .hero-photo { border: 7px solid var(--white); border-radius: 48% 48% 42% 42%; box-shadow: 0 20px 45px rgba(16,34,29,.15); height: 480px; object-fit: cover; object-position: center; position: relative; width: 365px; z-index: 1; }
+    .float-card { align-items: center; background: rgba(255,255,255,.94); border: 1px solid #e9f1eb; border-radius: 14px; box-shadow: 0 13px 30px rgba(16,34,29,.1); display: flex; font-size: .72rem; gap: .55rem; padding: .72rem .85rem; position: absolute; z-index: 2; }
+    .float-card strong { display: block; font-size: .7rem; }
+    .float-card small { color: var(--muted); display: block; font-size: .62rem; }
+    .float-card.top { right: 0; top: 15%; }
+    .float-card.bottom { bottom: 15%; left: 0; }
+    .float-icon { align-items: center; background: var(--mint); border-radius: 50%; color: var(--green-dark); display: flex; height: 27px; justify-content: center; width: 27px; }
+    .float-icon svg { height: 14px; width: 14px; }
 
-  /* ===== MENU MOBILE ===== */
-  .mobile-menu{
-    position:fixed;inset:0;background:var(--preto);z-index:200;
-    display:none;flex-direction:column;padding:6rem 10% 2rem;
-    overflow-y: auto;
-  }
-  .mob-links{display:flex;flex-direction:column;gap:1.8rem;text-align:center;}
-  .mob-link{font-family:var(--serif);font-size:2rem;color:var(--branco);}
-  .mob-foot{margin-top:4rem;text-align:center;}
+    section { padding: 6.5rem 0; }
+    .section-heading { margin-bottom: 2.8rem; max-width: 610px; }
+    h2 { font-family: var(--display); font-size: clamp(2rem, 4vw, 3.15rem); letter-spacing: -.06em; line-height: 1.08; margin-top: .8rem; }
+    .section-heading p { color: var(--muted); margin-top: 1rem; max-width: 520px; }
+    .intro-band { background: var(--ink); color: var(--white); }
+    .intro-grid { align-items: center; display: grid; gap: 4rem; grid-template-columns: .8fr 1.2fr; }
+    .intro-grid h2 { color: var(--white); }
+    .intro-grid p { color: #b8c8c0; font-size: 1.02rem; max-width: 620px; }
+    .intro-tag { color: #9ee0b9; font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 
-  /* ===== HERO ===== */
-  .hero{
-    position:relative;min-height:100vh;
-    display:flex;align-items:center;
-    color:var(--texto-escuro);
-    overflow:hidden;
-    padding-top: var(--header-h);
-  }
-  .hero-bg{position:absolute;inset:0;z-index:-2;}
-  .hero-bg img{width:100%;height:100%;object-fit:cover;}
-  .hero-bg::after{
-    content:'';position:absolute;inset:0;
-    background:linear-gradient(180deg, rgba(253,251,249,0.5) 0%, rgba(253,251,249,0.9) 100%);
-  }
-  .hero-content{position:relative;z-index:2;width:100%;}
-  .hero h1{font-size:clamp(2.2rem,6vw,4rem);margin-bottom:1.2rem;}
-  .hero h1 em{color:var(--dourado);font-style:italic;}
-  .hero p.lead{font-size:1.1rem;color:var(--texto-suave);max-width:550px;line-height:1.6;margin-bottom:2rem;}
-  .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;}
+    .treatment-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); }
+    .treatment-card { background: var(--white); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; transition: box-shadow .3s var(--ease), transform .3s var(--ease); }
+    .treatment-card:hover { box-shadow: 0 18px 35px rgba(16,34,29,.1); transform: translateY(-7px); }
+    .treatment-image { height: 225px; overflow: hidden; }
+    .treatment-image img { height: 100%; object-fit: cover; transition: transform .55s var(--ease); width: 100%; }
+    .treatment-card:hover .treatment-image img { transform: scale(1.06); }
+    .treatment-content { padding: 1.45rem 1.5rem 1.6rem; }
+    .treatment-number { color: var(--green); font-size: .7rem; font-weight: 800; letter-spacing: .12em; }
+    .treatment-card h3 { font-family: var(--display); font-size: 1.25rem; letter-spacing: -.04em; margin: .5rem 0 .55rem; }
+    .treatment-card p { color: var(--muted); font-size: .88rem; line-height: 1.58; }
+    .treatment-link { color: var(--green-dark); display: inline-block; font-size: .78rem; font-weight: 800; margin-top: 1.1rem; }
+    .treatment-link::after { content: " ↗"; }
+    .secondary-treatments { display: grid; gap: .8rem; grid-template-columns: repeat(3, 1fr); margin-top: .8rem; }
+    .mini-card { align-items: center; background: var(--white); border: 1px solid var(--line); border-radius: 14px; display: flex; gap: .9rem; padding: .8rem; }
+    .mini-card img { border-radius: 10px; height: 62px; object-fit: cover; width: 68px; }
+    .mini-card h4 { font-family: var(--display); font-size: .9rem; letter-spacing: -.03em; }
+    .mini-card p { color: var(--muted); font-size: .72rem; line-height: 1.25; margin-top: .15rem; }
 
-  /* ===== SECTIONS ===== */
-  section{padding:6rem 0; width:100%;}
-  .sec-head{max-width:650px;margin-bottom:3rem;}
-  .eyebrow{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dourado);margin-bottom:1rem;display:block;}
-  h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:1rem;}
+    .about { background: var(--white); }
+    .about-grid { align-items: center; display: grid; gap: 5rem; grid-template-columns: .9fr 1.1fr; }
+    .about-photo-wrap { position: relative; }
+    .about-photo { border-radius: 18px; height: 500px; object-fit: cover; object-position: center 25%; width: 100%; }
+    .about-stamp { background: var(--green); border: 9px solid var(--white); border-radius: 50%; bottom: -22px; color: var(--white); font-family: var(--display); font-size: .75rem; font-weight: 800; height: 116px; padding-top: 35px; position: absolute; right: -22px; text-align: center; transform: rotate(9deg); width: 116px; }
+    .about-copy p { color: var(--muted); margin-top: 1rem; max-width: 570px; }
+    .quote { border-left: 3px solid var(--green); color: var(--ink) !important; font-family: var(--display); font-size: 1.15rem; font-weight: 600; line-height: 1.45; margin-top: 1.8rem !important; padding-left: 1rem; }
+    .credentials { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.7rem; }
+    .credential { background: var(--mint); border-radius: 99px; color: var(--green-dark); font-size: .75rem; font-weight: 700; padding: .5rem .8rem; }
 
-  /* ===== ESPECIALIDADES ===== */
-  .esp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-  .esp-card{background:var(--rose-2);padding:2.5rem 2rem;border-radius:4px;transition:0.3s;}
-  .esp-card h3{margin-bottom:0.8rem;font-size:1.4rem;}
-  .esp-card p{font-size:0.9rem;color:var(--texto-suave);line-height:1.5;}
+    .trust { background: var(--mint); }
+    .trust-head { align-items: end; display: flex; justify-content: space-between; margin-bottom: 2.4rem; }
+    .trust-head p { color: var(--muted); font-size: .9rem; max-width: 300px; }
+    .testimonials { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); }
+    .testimonial { background: rgba(255,255,255,.72); border: 1px solid rgba(255,255,255,.9); border-radius: 16px; padding: 1.45rem; }
+    .stars { color: var(--green-dark); letter-spacing: .14em; }
+    .testimonial blockquote { font-family: var(--display); font-size: .98rem; font-weight: 600; line-height: 1.45; margin: 1rem 0 1.4rem; }
+    .testimonial footer { color: var(--muted); font-size: .73rem; }
+    .testimonial footer strong { color: var(--ink); display: block; font-size: .78rem; }
 
-  @media(max-width:900px){ .esp-grid{grid-template-columns:repeat(2,1fr);} }
-  @media(max-width:600px){ .esp-grid{grid-template-columns:1fr;} }
+    .contact { background: var(--ink); color: var(--white); }
+    .contact-grid { display: grid; gap: 5rem; grid-template-columns: .9fr 1.1fr; }
+    .contact h2 { color: var(--white); }
+    .contact-intro { color: #b8c8c0; margin-top: 1rem; max-width: 430px; }
+    .contact-details { display: grid; gap: 1rem; margin-top: 2.4rem; }
+    .contact-detail { align-items: flex-start; display: flex; gap: .8rem; }
+    .contact-detail svg { color: #7fe0a5; flex: 0 0 auto; height: 20px; margin-top: 2px; width: 20px; }
+    .contact-detail strong { display: block; font-size: .78rem; }
+    .contact-detail span { color: #b8c8c0; display: block; font-size: .84rem; margin-top: .15rem; }
+    .contact-form { background: var(--white); border-radius: 18px; color: var(--ink); padding: 1.6rem; }
+    .contact-form h3 { font-family: var(--display); font-size: 1.25rem; letter-spacing: -.04em; }
+    .contact-form p { color: var(--muted); font-size: .8rem; margin: .35rem 0 1.3rem; }
+    .field { margin-top: .9rem; }
+    .field label { display: block; font-size: .74rem; font-weight: 700; margin-bottom: .4rem; }
+    .field input, .field textarea { background: #f5f8f5; border: 1px solid var(--line); border-radius: 9px; outline: none; padding: .75rem .8rem; resize: vertical; width: 100%; }
+    .field textarea { min-height: 100px; }
+    .field input:focus, .field textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(24,166,106,.12); }
+    .contact-form .btn { border: 0; cursor: pointer; margin-top: 1rem; width: 100%; }
 
-  /* ===== RESULTADOS ===== */
-  .resultados-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
-  .compare-slider{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:4px;}
-  .compare-slider img{width:100%;height:100%;object-fit:cover;}
-  .compare-after{position:absolute;inset:0;clip-path:inset(0 50% 0 0);z-index:1;}
-  .compare-range{position:absolute;inset:0;width:100%;height:100%;opacity:0;z-index:4;cursor:ew-resize;}
-  .compare-handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;z-index:3;transform:translateX(-50%);}
-  
-  @media(max-width:900px){ .resultados-grid{grid-template-columns:1fr; max-width:500px; margin:0 auto;} }
+    footer { background: #0b1915; color: var(--white); padding: 2.8rem 0 1.3rem; }
+    .footer-top { align-items: start; display: flex; justify-content: space-between; }
+    .footer-copy { color: #9cb0a6; font-size: .8rem; margin-top: .65rem; max-width: 260px; }
+    .footer-links { display: flex; gap: 1.4rem; }
+    .footer-links a { color: #c9d8d0; font-size: .8rem; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); color: #73887d; display: flex; font-size: .7rem; justify-content: space-between; margin-top: 2.3rem; padding-top: 1rem; }
+    .wa-float { align-items: center; background: #25d366; border: 4px solid var(--paper); border-radius: 50%; bottom: 22px; box-shadow: 0 7px 18px rgba(0,0,0,.18); color: var(--white); display: flex; height: 54px; justify-content: center; position: fixed; right: 22px; transition: transform .2s ease; width: 54px; z-index: 15; }
+    .wa-float:hover { transform: scale(1.08); }
+    .wa-float svg { height: 27px; width: 27px; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: .08s; } .delay-2 { transition-delay: .16s; } .delay-3 { transition-delay: .24s; }
 
-  /* ===== SOBRE ===== */
-  .sobre-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:center;}
-  .sobre-img img{border-radius:4px;width:100%;}
-  @media(max-width:800px){ .sobre-grid{grid-template-columns:1fr;} }
-
-  /* ===== CONTATO ===== */
-  .contato-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
-  .contato-card{background:var(--rose-2);padding:2rem;border-radius:4px;}
-  @media(max-width:600px){ .contato-grid{grid-template-columns:1fr;} }
-
-  /* ===== FOOTER ===== */
-  footer{background:var(--preto);color:var(--branco);padding:4rem 0 2rem;}
-  .foot-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:3rem;margin-bottom:3rem;}
-  .foot-col h6{color:var(--dourado);margin-bottom:1.5rem;text-transform:uppercase;font-size:0.7rem;letter-spacing:0.1em;}
-  .foot-col a{display:block;margin-bottom:0.8rem;color:#ccc;font-size:0.9rem;}
-  .foot-bottom{border-top:1px solid #333;padding-top:2rem;display:flex;justify-content:space-between;font-size:0.8rem;color:#777;}
-
-  /* UTILS */
-  .reveal{opacity:0;transform:translateY(20px);transition:0.8s ease-out;}
-  .reveal.show{opacity:1;transform:translateY(0);}
-  .wa-float{position:fixed;bottom:20px;right:20px;z-index:99;background:#25d366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);}
-  .wa-float svg{width:32px;height:32px;fill:#fff;}
-</style>
+    @media (max-width: 900px) {
+      .container { width: min(100% - 42px, 680px); }
+      header { padding: 0 21px; }
+      .desktop-nav, .header-cta { display: none; } .menu-toggle { display: block; }
+      .hero { min-height: auto; } .hero-inner { gap: 1rem; grid-template-columns: 1fr; padding: 4.4rem 0 2rem; }
+      .hero-copy { padding-bottom: 0; } .hero-visual { min-height: 500px; }
+      .hero-visual::before { height: 430px; width: 330px; } .hero-visual::after { height: 460px; width: 360px; }
+      .hero-photo { height: 420px; width: 320px; } .float-card.top { right: 2%; } .float-card.bottom { left: 2%; }
+      .intro-grid, .about-grid, .contact-grid { gap: 2.3rem; grid-template-columns: 1fr; }
+      .treatment-grid { grid-template-columns: repeat(2, 1fr); } .testimonials { grid-template-columns: 1fr; }
+      .about-photo { height: 430px; max-width: 470px; } .about-stamp { right: 0; }
+      .contact-grid { gap: 2rem; }
+    }
+    @media (max-width: 560px) {
+      section { padding: 4.6rem 0; } .container { width: calc(100% - 34px); }
+      .brand-name { font-size: .8rem; } .hero-inner { padding-top: 3rem; } h1 { font-size: 2.65rem; }
+      .hero-actions .btn { flex: 1; font-size: .78rem; } .metrics { gap: 1rem; margin-top: 2.4rem; } .metric { padding-right: 1rem; }
+      .hero-visual { min-height: 420px; } .hero-visual::before { height: 355px; width: 270px; } .hero-visual::after { height: 380px; width: 294px; }
+      .hero-photo { height: 350px; width: 268px; } .float-card { font-size: .65rem; } .float-card.top { right: -3px; top: 8%; } .float-card.bottom { bottom: 8%; left: -3px; }
+      .treatment-grid, .secondary-treatments { grid-template-columns: 1fr; } .treatment-image { height: 215px; }
+      .trust-head, .footer-top, .footer-bottom { align-items: flex-start; flex-direction: column; gap: 1rem; } .footer-links { flex-wrap: wrap; }
+      .about-photo { height: 360px; } .about-stamp { bottom: -25px; height: 100px; padding-top: 29px; width: 100px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
+  </style>
 </head>
 <body>
-
-<header id="header">
-  <a href="#" class="logo-mark">
-    <img src="images/logo-premium-v3.png?update=final" alt="Dra. Luciana Granado">
-  </a>
-
-  <nav class="links">
-    <a href="#sobre">Sobre</a>
-    <a href="#especializacoes">Especialidades</a>
-    <a href="#resultados">Resultados</a>
-    <a href="#contato">Contato</a>
+  <header id="header">
+    <a class="brand" href="#topo" aria-label="Luciana Granado, Odontologia Integrada">
+      <img src="images/logo-premium-v3.png" alt="">
+      <span class="brand-name">Luciana Granado<small>Odontologia Integrada</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <a href="#tratamentos">Tratamentos</a><a href="#sobre">Sobre</a><a href="#depoimentos">Experiências</a><a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn-primary header-cta" href="https://wa.me/5527997631575?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Menu mobile">
+    <a href="#tratamentos">Tratamentos</a><a href="#sobre">Sobre</a><a href="#depoimentos">Experiências</a><a href="#contato">Contato</a>
+    <a class="btn btn-primary" href="https://wa.me/5527997631575" target="_blank" rel="noopener">Agendar avaliação</a>
   </nav>
 
-  <div class="nav-cta">
-    <a href="https://wa.me/5527997631575" target="_blank" class="btn solid">Agendar</a>
-    <div class="burger" id="burger">
-      <span></span><span></span><span></span>
-    </div>
-  </div>
-</header>
-
-<div class="mobile-menu" id="mobileMenu">
-  <nav class="mob-links">
-    <a href="#sobre" class="mob-link">Sobre</a>
-    <a href="#especializacoes" class="mob-link">Especialidades</a>
-    <a href="#resultados" class="mob-link">Resultados</a>
-    <a href="#contato" class="mob-link">Contato</a>
-  </nav>
-  <div class="mob-foot">
-    <a href="https://wa.me/5527997631575" class="btn solid full">WhatsApp</a>
-  </div>
-</div>
-
-<section class="hero" id="topo">
-  <div class="hero-bg">
-    <img src="images/dra-luciana-hero.jpg" alt="Dra. Luciana Granado">
-  </div>
-  <div class="container hero-content">
-    <span class="eyebrow">Vila Velha · ES</span>
-    <h1>Cuidado e <em>excelência</em> no seu sorriso.</h1>
-    <p class="lead">Atendimento odontológico especializado em Endodontia, Ortodontia e Implantodontia com acolhimento e precisão.</p>
-    <div class="hero-ctas">
-      <a href="https://wa.me/5527997631575" target="_blank" class="btn solid">Agendar pelo WhatsApp</a>
-      <a href="tel:+5527997631575" class="btn on-light">Ligar agora</a>
-    </div>
-  </div>
-</section>
-
-<section id="especializacoes">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Especialidades</span>
-      <h2>Áreas de Atuação</h2>
-    </div>
-    <div class="esp-grid">
-      <div class="esp-card reveal">
-        <h3>Endodontia</h3>
-        <p>Tratamento de canal especializado com tecnologia avançada e conforto.</p>
-      </div>
-      <div class="esp-card reveal">
-        <h3>Ortodontia</h3>
-        <p>Aparelhos modernos para alinhar seu sorriso de forma funcional e estética.</p>
-      </div>
-      <div class="esp-card reveal">
-        <h3>Implantodontia</h3>
-        <p>Reabilitação oral com implantes de alta qualidade e precisão.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="resultados" style="background: #f9f9f9;">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Resultados</span>
-      <h2>Antes & Depois</h2>
-    </div>
-    <div class="resultados-grid">
-      <div class="compare-card reveal">
-        <div class="compare-slider" data-compare>
-          <div class="compare-before"><img src="images/caso1-antes.jpg" alt="Antes"></div>
-          <div class="compare-after"><img src="images/caso1-depois.jpg" alt="Depois"></div>
-          <div class="compare-handle"></div>
-          <input type="range" min="0" max="100" value="50" class="compare-range">
+  <main id="topo">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Odontologia integrada · Vila Velha</span>
+          <h1>Seu sorriso cuidado por quem trata <mark>paciente</mark>, não cliente.</h1>
+          <p class="hero-lead">Endodontia, ortodontia e implantes numa só clínica, com tecnologia moderna e atendimento sem pressa.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="https://wa.me/5527997631575?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar avaliação <span>↗</span></a><a class="btn btn-ghost" href="#tratamentos">Ver tratamentos <span>↓</span></a></div>
+          <div class="metrics"><div class="metric"><strong>3</strong><span>especialidades numa só clínica</span></div><div class="metric"><strong>CRO-ES 5703</strong><span>registro ativo<br>Vila Velha · ES</span></div></div>
         </div>
-        <p style="margin-top:1rem; text-align:center; font-weight:500;">Estética Dental</p>
-      </div>
-      <div class="compare-card reveal">
-        <div class="compare-slider" data-compare>
-          <div class="compare-before"><img src="images/caso2-antes.jpg" alt="Antes"></div>
-          <div class="compare-after"><img src="images/caso2-depois.jpg" alt="Depois"></div>
-          <div class="compare-handle"></div>
-          <input type="range" min="0" max="100" value="50" class="compare-range">
+        <div class="hero-visual reveal delay-2">
+          <img class="hero-photo" src="images/dra-luciana-hero.jpg" alt="Dra. Luciana Granado no consultório">
+          <div class="float-card top"><div class="float-icon">✓</div><div><strong>Dra. Luciana Granado</strong><small>Especialista em cuidar</small></div></div>
+          <div class="float-card bottom"><div class="float-icon">✦</div><div><strong>Endodontia · Ortodontia</strong><small>Implantodontia</small></div></div>
         </div>
-        <p style="margin-top:1rem; text-align:center; font-weight:500;">Reabilitação</p>
       </div>
-      <div class="compare-card reveal">
-        <div class="compare-slider" data-compare>
-          <div class="compare-before"><img src="images/implante-dentario.jpg?v=final" alt="Antes"></div>
-          <div class="compare-after"><img src="images/caso3-depois.jpg" alt="Depois"></div>
-          <div class="compare-handle"></div>
-          <input type="range" min="0" max="100" value="50" class="compare-range">
-        </div>
-        <p style="margin-top:1rem; text-align:center; font-weight:500;">Implante e Alinhamento</p>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="sobre">
-  <div class="container">
-    <div class="sobre-grid">
-      <div class="sobre-img reveal">
-        <img src="images/dra-luciana-sobre.jpg" alt="Dra. Luciana Granado">
-      </div>
-      <div class="sobre-text reveal">
-        <span class="eyebrow">Sobre a Doutora</span>
-        <h2>Especialista dedicada ao seu bem-estar.</h2>
-        <p>Dra. Luciana Granado é cirurgiã-dentista com especialização em Endodontia, Ortodontia e Implantodontia. Sua prática combina o rigor técnico com uma abordagem humanizada para devolver a alegria de sorrir.</p>
-        <p>Seu compromisso é oferecer uma Odontologia Integrada, onde a tecnologia de ponta e o acolhimento andam juntos para devolver não apenas a função e a estética, mas a satisfação de cada paciente.</p>
-        <p>CRO-ES 5703</p>
-        <a href="https://wa.me/5527997631575" target="_blank" class="btn solid" style="margin-top:1.5rem;">Falar no WhatsApp</a>
-      </div>
-    </div>
-  </div>
-</section>
+    <section class="intro-band"><div class="container intro-grid reveal"><span class="intro-tag">Uma clínica, um cuidado contínuo</span><div><h2>Tudo para o seu sorriso <mark>num lugar só.</mark></h2><p>Você é acompanhado do diagnóstico ao resultado pela mesma profissional, com tempo para entender cada passo e um plano que respeita a sua rotina.</p></div></div></section>
 
-<section id="contato" style="background: #f3e9e2;">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Contato</span>
-      <h2>Agende sua consulta</h2>
-    </div>
-    <div class="contato-grid">
-      <div class="contato-card reveal">
-        <p><strong>WhatsApp</strong></p>
-        <a href="https://wa.me/5527997631575" style="color:var(--dourado); font-size:1.2rem;">+55 27 99763-1575</a>
+    <section id="tratamentos"><div class="container">
+      <div class="section-heading reveal"><span class="eyebrow">Tratamentos</span><h2>Especialidades para cuidar de cada fase.</h2><p>Da dor à prevenção, da função à estética: uma odontologia completa, próxima e planejada.</p></div>
+      <div class="treatment-grid">
+        <article class="treatment-card reveal"><div class="treatment-image"><img src="images/procedimento-implantodontia.jpg" alt="Planejamento de implante dentário"></div><div class="treatment-content"><span class="treatment-number">01</span><h3>Implantodontia</h3><p>Reabilitação com implantes que devolvem mordida, fala e confiança, com planejamento cuidadoso do início ao fim.</p><a class="treatment-link" href="#contato">Conhecer</a></div></article>
+        <article class="treatment-card reveal delay-1"><div class="treatment-image"><img src="images/procedimento-endodontia.jpg" alt="Tratamento endodôntico com tecnologia"></div><div class="treatment-content"><span class="treatment-number">02</span><h3>Endodontia</h3><p>Tratamento de canal com segurança e conforto: tira a dor, trata a infecção e preserva o dente natural.</p><a class="treatment-link" href="#contato">Conversar</a></div></article>
+        <article class="treatment-card reveal delay-2"><div class="treatment-image"><img src="images/procedimento-ortodontia.jpg" alt="Ortodontia e alinhamento do sorriso"></div><div class="treatment-content"><span class="treatment-number">03</span><h3>Ortodontia</h3><p>Aparelhos e alinhamento para um sorriso reto, uma mordida saudável e mais segurança para sorrir.</p><a class="treatment-link" href="#contato">Agendar</a></div></article>
       </div>
-      <div class="contato-card reveal">
-        <p><strong>Localização</strong></p>
-        <p>Av. Henrique Moscoso, 1069 — Vila Velha, ES</p>
+      <div class="secondary-treatments">
+        <article class="mini-card reveal"><img src="images/mini-clareamento.jpg" alt="Clareamento dental"><div><h4>Clareamento</h4><p>Mais luz para o sorriso, com segurança.</p></div></article>
+        <article class="mini-card reveal delay-1"><img src="images/mini-restauracao.jpg" alt="Restauração estética"><div><h4>Restaurações</h4><p>Naturalidade, função e acabamento.</p></div></article>
+        <article class="mini-card reveal delay-2"><img src="images/mini-protese.jpg" alt="Próteses dentárias"><div><h4>Próteses</h4><p>Conforto para voltar a mastigar bem.</p></div></article>
       </div>
-    </div>
-  </div>
-</section>
+    </div></section>
 
-<footer>
-  <div class="container">
-    <div class="foot-grid">
-      <div class="foot-col">
-        <h6 style="color:#fff; font-size:1.2rem; font-family:var(--serif);">Dra. Luciana Granado</h6>
-        <p style="color:#777; font-size:0.9rem; margin-top:0.5rem;">Odontologia Integrada em Vila Velha.</p>
-      </div>
-      <div class="foot-col">
-        <h6>Navegação</h6>
-        <a href="#sobre">Sobre</a>
-        <a href="#especializacoes">Especialidades</a>
-        <a href="#resultados">Resultados</a>
-      </div>
-      <div class="foot-col">
-        <h6>Social</h6>
-        <a href="https://instagram.com/dralucianagranado" target="_blank">Instagram</a>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 Dra. Luciana Granado.</span>
-      <span>CRO-ES 5703</span>
-    </div>
-  </div>
-</footer>
+    <section id="sobre" class="about"><div class="container about-grid"><div class="about-photo-wrap reveal"><img class="about-photo" src="images/dra-luciana-sobre.jpg" alt="Dra. Luciana Granado, cirurgiã-dentista"><div class="about-stamp">Cuidado<br>de verdade</div></div><div class="about-copy reveal delay-1"><span class="eyebrow">Quem cuida de você</span><h2>É sempre a mesma pessoa.</h2><p>Especialista em Endodontia, Ortodontia e Implantodontia, a Dra. Luciana Granado une as três frentes em uma odontologia integrada, com escuta, precisão e atendimento humanizado.</p><p>Mais do que tratar dentes, o objetivo é devolver conforto, saúde e qualidade de vida — sem pressa e sem te fazer sentir como mais um.</p><p class="quote">“Meu paciente não é cliente. Paciente confia, e a gente entrega cuidado, cura e qualidade de vida.”</p><div class="credentials"><span class="credential">Endodontia</span><span class="credential">Ortodontia</span><span class="credential">Implantodontia</span></div></div></div></section>
 
-<a href="https://wa.me/5527997631575" target="_blank" class="wa-float">
-  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.13-1.54a9.85 9.85 0 004.91 1.31h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm0 17.9h-.01a8.02 8.02 0 01-4.08-1.12l-.29-.17-3.05.92.91-2.98-.19-.3a8 8 0 01-1.24-4.34c0-4.42 3.6-8.02 8.03-8.02 2.14 0 4.16.84 5.67 2.35a7.96 7.96 0 012.34 5.68c0 4.43-3.6 8-8.09 8zm4.4-6c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.8-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02 0 1.19.87 2.34.99 2.5.12.16 1.71 2.61 4.15 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"/></svg>
-</a>
+    <section id="depoimentos" class="trust"><div class="container"><div class="trust-head reveal"><div><span class="eyebrow">Experiências</span><h2>Histórias que voltam a <mark>sorrir.</mark></h2></div><p>Acolhimento, mão leve e resultado que dá orgulho de mostrar.</p></div><div class="testimonials"><article class="testimonial reveal"><div class="stars">★★★★★</div><blockquote>“Meus dentes já são outros, meu sorriso está voltando. Mas a sua empatia como ser humano, isso é irrefutável.”</blockquote><footer><strong>Paciente de reabilitação</strong>Vila Velha · ES</footer></article><article class="testimonial reveal delay-1"><div class="stars">★★★★★</div><blockquote>“Sempre tive medo de dentista. Aqui foi a primeira vez que fiz canal sem sentir dor.”</blockquote><footer><strong>Paciente de endodontia</strong>Centro · Vila Velha</footer></article><article class="testimonial reveal delay-2"><div class="stars">★★★★★</div><blockquote>“Coloquei meu implante e voltei a comer de tudo. Atendimento humano do início ao fim.”</blockquote><footer><strong>Paciente de implante</strong>Vila Velha · ES</footer></article></div></div></section>
 
-<script>
-  const burger = document.getElementById('burger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  
-  burger.addEventListener('click', () => {
-    const isVisible = mobileMenu.style.display === 'flex';
-    mobileMenu.style.display = isVisible ? 'none' : 'flex';
-  });
+    <section id="contato" class="contact"><div class="container contact-grid"><div class="reveal"><span class="eyebrow" style="color:#7fe0a5">Contato</span><h2>Vamos cuidar do seu <mark>sorriso.</mark></h2><p class="contact-intro">Mande uma mensagem. A gente responde rapidinho pelo WhatsApp, com atendimento de verdade.</p><div class="contact-details"><div class="contact-detail"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 .1 4.22 2 2 0 0 1 2.1 2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L6.1 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.8 12.8 0 0 0 2.81.7A2 2 0 0 1 20 16.92z"/></svg><div><strong>WhatsApp</strong><span>(27) 99763-1575</span></div></div><div class="contact-detail"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><strong>Onde estamos</strong><span>Av. Henrique Moscoso, 1069 · sala 5<br>Centro, Vila Velha · ES</span></div></div><div class="contact-detail"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong>Atendimento</strong><span>Com hora marcada · segunda a sexta</span></div></div></div></div><form class="contact-form reveal delay-1" id="whatsappForm"><h3>Fale com a clínica</h3><p>Preencha e abrimos o WhatsApp com sua mensagem pronta.</p><div class="field"><label for="nome">Seu nome (opcional)</label><input id="nome" type="text" placeholder="Ex.: Mariana Alves"></div><div class="field"><label for="mensagem">Em que podemos te ajudar?</label><textarea id="mensagem" placeholder="Ex.: Quero fazer uma avaliação de implante."></textarea></div><button class="btn btn-primary" type="submit">Enviar pelo WhatsApp ↗</button></form></div></section>
+  </main>
 
-  document.querySelectorAll('.mob-link').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.style.display = 'none';
-    });
-  });
-
-  window.addEventListener('scroll', () => {
+  <footer><div class="container"><div class="footer-top"><div><a class="brand" href="#topo"><img src="images/logo-premium-v3.png" alt=""><span class="brand-name" style="color:#fff">Luciana Granado<small style="color:#9cb0a6">Odontologia Integrada</small></span></a><p class="footer-copy">Endodontia, ortodontia e implantes em Vila Velha. Cuidado de verdade, com hora marcada.</p></div><nav class="footer-links" aria-label="Navegação do rodapé"><a href="#tratamentos">Tratamentos</a><a href="#sobre">Sobre</a><a href="#depoimentos">Experiências</a><a href="#contato">Contato</a></nav></div><div class="footer-bottom"><span>© 2026 Luciana Granado · Odontologia Integrada</span><span>CRO-ES 5703 · Vila Velha · ES</span></div></div></footer>
+  <a class="wa-float" href="https://wa.me/5527997631575" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M20.5 3.5A11.8 11.8 0 0 0 12.08 0C5.54 0 .22 5.32.22 11.87c0 2.09.55 4.14 1.59 5.94L.12 24l6.34-1.66a11.87 11.87 0 0 0 5.62 1.43h.01c6.54 0 11.86-5.32 11.86-11.87 0-3.17-1.23-6.14-3.45-8.4Zm-8.42 18.24h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.76.98 1-3.66-.24-.38a9.83 9.83 0 0 1-1.51-5.22c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.03 6.96 2.89a9.8 9.8 0 0 1 2.88 6.96c0 5.43-4.41 9.84-9.83 9.84Zm5.4-7.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51H7.9c-.2 0-.52.08-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z"/></svg></a>
+  <script>
     const header = document.getElementById('header');
-    if(window.scrollY > 50) header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
-  });
-
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) entry.target.classList.add('show');
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
-
-  document.querySelectorAll('[data-compare]').forEach(el => {
-    const after = el.querySelector('.compare-after');
-    const range = el.querySelector('.compare-range');
-    const handle = el.querySelector('.compare-handle');
-    range.addEventListener('input', (e) => {
-      const v = e.target.value;
-      after.style.clipPath = `inset(0 ${100-v}% 0 0)`;
-      handle.style.left = `${v}%`;
-    });
-  });
-</script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 18), { passive: true });
+    menuToggle.addEventListener('click', () => { const open = mobileMenu.classList.toggle('open'); document.body.classList.toggle('menu-open', open); menuToggle.setAttribute('aria-expanded', open); });
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { mobileMenu.classList.remove('open'); document.body.classList.remove('menu-open'); menuToggle.setAttribute('aria-expanded', 'false'); }));
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.getElementById('whatsappForm').addEventListener('submit', event => { event.preventDefault(); const name = document.getElementById('nome').value.trim(); const message = document.getElementById('mensagem').value.trim() || 'Quero agendar uma avaliação.'; const text = `Olá, sou ${name || 'um paciente'} e gostaria de falar sobre: ${message}`; window.open(`https://wa.me/5527997631575?text=${encodeURIComponent(text)}`, '_blank', 'noopener'); });
+  </script>
 </body>
 </html>
