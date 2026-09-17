@@ -60,8 +60,8 @@
     .mobile-menu a { font-family: var(--display); font-size: 2rem; font-weight: 700; }
 
     .hero { min-height: 760px; padding-top: var(--header); position: relative; }
-    .hero-inner { align-items: center; display: grid; gap: 5rem; grid-template-columns: .95fr 1.05fr; min-height: 682px; }
-    .hero-copy { padding-bottom: 2rem; }
+    .hero-inner { align-items: center; display: grid; gap: 5rem; grid-template-columns: 1.02fr .98fr; min-height: 682px; }
+    .hero-copy { padding-bottom: 2rem; order: 2; }
     h1 { font-family: var(--display); font-size: clamp(2.7rem, 5.2vw, 4.55rem); letter-spacing: -.065em; line-height: 1.06; margin: 1.1rem 0 1.35rem; max-width: 600px; }
     h1 mark, h2 mark { background: linear-gradient(transparent 62%, var(--mint) 62%); color: var(--green-dark); padding: 0 .04em; }
     .hero-lead { color: var(--muted); font-size: 1.02rem; max-width: 480px; }
@@ -71,26 +71,34 @@
     .metric:last-child { border: 0; padding-right: 0; }
     .metric strong { display: block; font-family: var(--display); font-size: 1.18rem; letter-spacing: -.04em; }
     .metric span { color: var(--muted); display: block; font-size: .65rem; line-height: 1.25; margin-top: .18rem; max-width: 105px; }
-    .hero-visual { align-items: center; display: flex; justify-content: center; min-height: 600px; position: relative; }
-    .hero-visual::before { border: 1px solid rgba(24,166,106,.65); border-radius: 48% 52% 48% 52%; content: ""; height: 500px; position: absolute; transform: rotate(10deg); width: 390px; }
-    .hero-visual::after { border: 1px dashed #cfe2d5; border-radius: 48% 52% 48% 52%; content: ""; height: 550px; position: absolute; transform: rotate(-11deg); width: 430px; }
+    .hero-visual { align-items: center; order: 1; order: 1; display: flex; justify-content: center; min-height: 600px; position: relative; }
+    .hero-visual::before { animation: orbit 16s linear infinite; border: 2px dotted rgba(24,166,106,.65); border-radius: 48% 52% 48% 52%; content: ""; height: 500px; position: absolute; transform: rotate(10deg); width: 390px; }
+    .hero-visual::after { animation: orbitReverse 20s linear infinite; border: 2px dotted #cfe2d5; border-radius: 48% 52% 48% 52%; content: ""; height: 550px; position: absolute; transform: rotate(-11deg); width: 430px; }
     .hero-photo { border: 7px solid var(--white); border-radius: 48% 48% 42% 42%; box-shadow: 0 20px 45px rgba(16,34,29,.15); height: 480px; object-fit: cover; object-position: center; position: relative; width: 365px; z-index: 1; }
     .float-card { align-items: center; background: rgba(255,255,255,.94); border: 1px solid #e9f1eb; border-radius: 14px; box-shadow: 0 13px 30px rgba(16,34,29,.1); display: flex; font-size: .72rem; gap: .55rem; padding: .72rem .85rem; position: absolute; z-index: 2; }
     .float-card strong { display: block; font-size: .7rem; }
     .float-card small { color: var(--muted); display: block; font-size: .62rem; }
     .float-card.top { right: 0; top: 15%; }
     .float-card.bottom { bottom: 15%; left: 0; }
+    .float-dot { background: var(--green); border: 4px solid var(--mint); border-radius: 50%; display: block; flex: 0 0 auto; height: 18px; width: 18px; }
+    .float-dot { background: var(--green); border: 4px solid var(--mint); border-radius: 50%; display: block; flex: 0 0 auto; height: 18px; width: 18px; }
     .float-icon { align-items: center; background: var(--mint); border-radius: 50%; color: var(--green-dark); display: flex; height: 27px; justify-content: center; width: 27px; }
     .float-icon svg { height: 14px; width: 14px; }
+    .rating { height: 4px; background: linear-gradient(90deg, var(--green) 100%, transparent 100%); border-radius: 99px; margin-top: .25rem; opacity: .85; width: 72px; }
+    @keyframes orbit { from { transform: rotate(10deg); } to { transform: rotate(370deg); } }
+    @keyframes orbitReverse { from { transform: rotate(-11deg); } to { transform: rotate(-371deg); } }
+    .rating { height: 4px; background: linear-gradient(90deg, var(--green) 100%, transparent 100%); border-radius: 99px; margin-top: .25rem; opacity: .85; width: 72px; }
+    @keyframes orbit { from { transform: rotate(10deg); } to { transform: rotate(370deg); } }
+    @keyframes orbitReverse { from { transform: rotate(-11deg); } to { transform: rotate(-371deg); } }
 
     section { padding: 6.5rem 0; }
     .section-heading { margin-bottom: 2.8rem; max-width: 610px; }
     h2 { font-family: var(--display); font-size: clamp(2rem, 4vw, 3.15rem); letter-spacing: -.06em; line-height: 1.08; margin-top: .8rem; }
     .section-heading p { color: var(--muted); margin-top: 1rem; max-width: 520px; }
-    .intro-band { background: var(--ink); color: var(--white); }
+    .intro-band { background: #e7f5eb; color: var(--ink); }
     .intro-grid { align-items: center; display: grid; gap: 4rem; grid-template-columns: .8fr 1.2fr; }
-    .intro-grid h2 { color: var(--white); }
-    .intro-grid p { color: #b8c8c0; font-size: 1.02rem; max-width: 620px; }
+    .intro-grid h2 { color: var(--ink); }
+    .intro-grid p { color: var(--muted); font-size: 1.02rem; max-width: 620px; }
     .intro-tag { color: #9ee0b9; font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 
     .treatment-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); }
@@ -104,7 +112,7 @@
     .treatment-card h3 { font-family: var(--display); font-size: 1.25rem; letter-spacing: -.04em; margin: .5rem 0 .55rem; }
     .treatment-card p { color: var(--muted); font-size: .88rem; line-height: 1.58; }
     .treatment-link { color: var(--green-dark); display: inline-block; font-size: .78rem; font-weight: 800; margin-top: 1.1rem; }
-    .treatment-link::after { content: " ↗"; }
+    .treatment-link::after { content: ""; }
     .secondary-treatments { display: grid; gap: .8rem; grid-template-columns: repeat(3, 1fr); margin-top: .8rem; }
     .mini-card { align-items: center; background: var(--white); border: 1px solid var(--line); border-radius: 14px; display: flex; gap: .9rem; padding: .8rem; }
     .mini-card img { border-radius: 10px; height: 62px; object-fit: cover; width: 68px; }
@@ -131,15 +139,15 @@
     .testimonial footer { color: var(--muted); font-size: .73rem; }
     .testimonial footer strong { color: var(--ink); display: block; font-size: .78rem; }
 
-    .contact { background: var(--ink); color: var(--white); }
+    .contact { background: #eef8f1; color: var(--ink); }
     .contact-grid { display: grid; gap: 5rem; grid-template-columns: .9fr 1.1fr; }
-    .contact h2 { color: var(--white); }
-    .contact-intro { color: #b8c8c0; margin-top: 1rem; max-width: 430px; }
+    .contact h2 { color: var(--ink); }
+    .contact-intro { color: var(--muted); margin-top: 1rem; max-width: 430px; }
     .contact-details { display: grid; gap: 1rem; margin-top: 2.4rem; }
     .contact-detail { align-items: flex-start; display: flex; gap: .8rem; }
     .contact-detail svg { color: #7fe0a5; flex: 0 0 auto; height: 20px; margin-top: 2px; width: 20px; }
     .contact-detail strong { display: block; font-size: .78rem; }
-    .contact-detail span { color: #b8c8c0; display: block; font-size: .84rem; margin-top: .15rem; }
+    .contact-detail span { color: var(--muted); display: block; font-size: .84rem; margin-top: .15rem; }
     .contact-form { background: var(--white); border-radius: 18px; color: var(--ink); padding: 1.6rem; }
     .contact-form h3 { font-family: var(--display); font-size: 1.25rem; letter-spacing: -.04em; }
     .contact-form p { color: var(--muted); font-size: .8rem; margin: .35rem 0 1.3rem; }
@@ -150,12 +158,12 @@
     .field input:focus, .field textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(24,166,106,.12); }
     .contact-form .btn { border: 0; cursor: pointer; margin-top: 1rem; width: 100%; }
 
-    footer { background: #0b1915; color: var(--white); padding: 2.8rem 0 1.3rem; }
+    footer { background: #dff2e5; color: var(--ink); padding: 2.8rem 0 1.3rem; }
     .footer-top { align-items: start; display: flex; justify-content: space-between; }
-    .footer-copy { color: #9cb0a6; font-size: .8rem; margin-top: .65rem; max-width: 260px; }
+    .footer-copy { color: var(--muted); font-size: .8rem; margin-top: .65rem; max-width: 260px; }
     .footer-links { display: flex; gap: 1.4rem; }
-    .footer-links a { color: #c9d8d0; font-size: .8rem; }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); color: #73887d; display: flex; font-size: .7rem; justify-content: space-between; margin-top: 2.3rem; padding-top: 1rem; }
+    .footer-links a { color: var(--green-dark); font-size: .8rem; }
+    .footer-bottom { border-top: 1px solid rgba(15,129,81,.18); color: var(--muted); display: flex; font-size: .7rem; justify-content: space-between; margin-top: 2.3rem; padding-top: 1rem; }
     .wa-float { align-items: center; background: #25d366; border: 4px solid var(--paper); border-radius: 50%; bottom: 22px; box-shadow: 0 7px 18px rgba(0,0,0,.18); color: var(--white); display: flex; height: 54px; justify-content: center; position: fixed; right: 22px; transition: transform .2s ease; width: 54px; z-index: 15; }
     .wa-float:hover { transform: scale(1.08); }
     .wa-float svg { height: 27px; width: 27px; }
@@ -168,7 +176,7 @@
       header { padding: 0 21px; }
       .desktop-nav, .header-cta { display: none; } .menu-toggle { display: block; }
       .hero { min-height: auto; } .hero-inner { gap: 1rem; grid-template-columns: 1fr; padding: 4.4rem 0 2rem; }
-      .hero-copy { padding-bottom: 0; } .hero-visual { min-height: 500px; }
+      .hero-copy { padding-bottom: 0; order: 2; } .hero-visual { min-height: 500px; order: 1; }
       .hero-visual::before { height: 430px; width: 330px; } .hero-visual::after { height: 460px; width: 360px; }
       .hero-photo { height: 420px; width: 320px; } .float-card.top { right: 2%; } .float-card.bottom { left: 2%; }
       .intro-grid, .about-grid, .contact-grid { gap: 2.3rem; grid-template-columns: 1fr; }
@@ -213,13 +221,13 @@
           <span class="eyebrow">Odontologia integrada · Vila Velha</span>
           <h1>Seu sorriso cuidado por quem trata <mark>paciente</mark>, não cliente.</h1>
           <p class="hero-lead">Endodontia, ortodontia e implantes numa só clínica, com tecnologia moderna e atendimento sem pressa.</p>
-          <div class="hero-actions"><a class="btn btn-primary" href="https://wa.me/5527997631575?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar avaliação <span>↗</span></a><a class="btn btn-ghost" href="#tratamentos">Ver tratamentos <span>↓</span></a></div>
+          <div class="hero-actions"><a class="btn btn-primary" href="https://wa.me/5527997631575?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar avaliação</a><a class="btn btn-ghost" href="#tratamentos">Ver tratamentos</a></div>
           <div class="metrics"><div class="metric"><strong>3</strong><span>especialidades numa só clínica</span></div><div class="metric"><strong>CRO-ES 5703</strong><span>registro ativo<br>Vila Velha · ES</span></div></div>
         </div>
         <div class="hero-visual reveal delay-2">
-          <img class="hero-photo" src="images/dra-luciana-hero.jpg" alt="Dra. Luciana Granado no consultório">
-          <div class="float-card top"><div class="float-icon">✓</div><div><strong>Dra. Luciana Granado</strong><small>Especialista em cuidar</small></div></div>
-          <div class="float-card bottom"><div class="float-icon">✦</div><div><strong>Endodontia · Ortodontia</strong><small>Implantodontia</small></div></div>
+          <img class="hero-photo" src="images/dra-luciana-apresentacao.webp" alt="Dra. Luciana Granado no consultório" fetchpriority="high" decoding="async">
+          <div class="float-card top"><span class="float-dot" aria-hidden="true"></span><div><strong>Dra. Luciana Granado</strong><small>Especialista em cuidar</small></div></div>
+          <div class="float-card bottom"><span class="float-dot" aria-hidden="true"></span><div><strong>Endodontia · Ortodontia</strong><small>Implantodontia</small></div></div>
         </div>
       </div>
     </section>
@@ -229,25 +237,25 @@
     <section id="tratamentos"><div class="container">
       <div class="section-heading reveal"><span class="eyebrow">Tratamentos</span><h2>Especialidades para cuidar de cada fase.</h2><p>Da dor à prevenção, da função à estética: uma odontologia completa, próxima e planejada.</p></div>
       <div class="treatment-grid">
-        <article class="treatment-card reveal"><div class="treatment-image"><img src="images/procedimento-implantodontia.jpg" alt="Planejamento de implante dentário"></div><div class="treatment-content"><span class="treatment-number">01</span><h3>Implantodontia</h3><p>Reabilitação com implantes que devolvem mordida, fala e confiança, com planejamento cuidadoso do início ao fim.</p><a class="treatment-link" href="#contato">Conhecer</a></div></article>
-        <article class="treatment-card reveal delay-1"><div class="treatment-image"><img src="images/procedimento-endodontia.jpg" alt="Tratamento endodôntico com tecnologia"></div><div class="treatment-content"><span class="treatment-number">02</span><h3>Endodontia</h3><p>Tratamento de canal com segurança e conforto: tira a dor, trata a infecção e preserva o dente natural.</p><a class="treatment-link" href="#contato">Conversar</a></div></article>
-        <article class="treatment-card reveal delay-2"><div class="treatment-image"><img src="images/procedimento-ortodontia.jpg" alt="Ortodontia e alinhamento do sorriso"></div><div class="treatment-content"><span class="treatment-number">03</span><h3>Ortodontia</h3><p>Aparelhos e alinhamento para um sorriso reto, uma mordida saudável e mais segurança para sorrir.</p><a class="treatment-link" href="#contato">Agendar</a></div></article>
+        <article class="treatment-card reveal"><div class="treatment-image"><img src="images/procedimento-implantodontia.webp" alt="Planejamento de implante dentário" loading="lazy" decoding="async"></div><div class="treatment-content"><span class="treatment-number">01</span><h3>Implantodontia</h3><p>Reabilitação com implantes que devolvem mordida, fala e confiança, com planejamento cuidadoso do início ao fim.</p><a class="treatment-link" href="#contato">Conhecer</a></div></article>
+        <article class="treatment-card reveal delay-1"><div class="treatment-image"><img src="images/procedimento-endodontia.webp" alt="Tratamento endodôntico com tecnologia" loading="lazy" decoding="async"></div><div class="treatment-content"><span class="treatment-number">02</span><h3>Endodontia</h3><p>Tratamento de canal com segurança e conforto: tira a dor, trata a infecção e preserva o dente natural.</p><a class="treatment-link" href="#contato">Conversar</a></div></article>
+        <article class="treatment-card reveal delay-2"><div class="treatment-image"><img src="images/procedimento-ortodontia.webp" alt="Ortodontia e alinhamento do sorriso" loading="lazy" decoding="async"></div><div class="treatment-content"><span class="treatment-number">03</span><h3>Ortodontia</h3><p>Aparelhos e alinhamento para um sorriso reto, uma mordida saudável e mais segurança para sorrir.</p><a class="treatment-link" href="#contato">Agendar</a></div></article>
       </div>
       <div class="secondary-treatments">
-        <article class="mini-card reveal"><img src="images/mini-clareamento.jpg" alt="Clareamento dental"><div><h4>Clareamento</h4><p>Mais luz para o sorriso, com segurança.</p></div></article>
-        <article class="mini-card reveal delay-1"><img src="images/mini-restauracao.jpg" alt="Restauração estética"><div><h4>Restaurações</h4><p>Naturalidade, função e acabamento.</p></div></article>
-        <article class="mini-card reveal delay-2"><img src="images/mini-protese.jpg" alt="Próteses dentárias"><div><h4>Próteses</h4><p>Conforto para voltar a mastigar bem.</p></div></article>
+        <article class="mini-card reveal"><img src="images/mini-clareamento.webp" alt="Clareamento dental" loading="lazy" decoding="async"><div><h4>Clareamento</h4><p>Mais luz para o sorriso, com segurança.</p></div></article>
+        <article class="mini-card reveal delay-1"><img src="images/mini-restauracao.webp" alt="Restauração estética" loading="lazy" decoding="async"><div><h4>Restaurações</h4><p>Naturalidade, função e acabamento.</p></div></article>
+        <article class="mini-card reveal delay-2"><img src="images/mini-protese.webp" alt="Próteses dentárias" loading="lazy" decoding="async"><div><h4>Próteses</h4><p>Conforto para voltar a mastigar bem.</p></div></article>
       </div>
     </div></section>
 
-    <section id="sobre" class="about"><div class="container about-grid"><div class="about-photo-wrap reveal"><img class="about-photo" src="images/dra-luciana-sobre.jpg" alt="Dra. Luciana Granado, cirurgiã-dentista"><div class="about-stamp">Cuidado<br>de verdade</div></div><div class="about-copy reveal delay-1"><span class="eyebrow">Quem cuida de você</span><h2>É sempre a mesma pessoa.</h2><p>Especialista em Endodontia, Ortodontia e Implantodontia, a Dra. Luciana Granado une as três frentes em uma odontologia integrada, com escuta, precisão e atendimento humanizado.</p><p>Mais do que tratar dentes, o objetivo é devolver conforto, saúde e qualidade de vida — sem pressa e sem te fazer sentir como mais um.</p><p class="quote">“Meu paciente não é cliente. Paciente confia, e a gente entrega cuidado, cura e qualidade de vida.”</p><div class="credentials"><span class="credential">Endodontia</span><span class="credential">Ortodontia</span><span class="credential">Implantodontia</span></div></div></div></section>
+    <section id="sobre" class="about"><div class="container about-grid"><div class="about-photo-wrap reveal"><img class="about-photo" src="images/dra-luciana-apresentacao.webp" alt="Dra. Luciana Granado, cirurgiã-dentista" loading="lazy" decoding="async"><div class="about-stamp">Cuidado<br>de verdade</div></div><div class="about-copy reveal delay-1"><span class="eyebrow">Quem cuida de você</span><h2>É sempre a mesma pessoa.</h2><p>Especialista em Endodontia, Ortodontia e Implantodontia, a Dra. Luciana Granado une as três frentes em uma odontologia integrada, com escuta, precisão e atendimento humanizado.</p><p>Mais do que tratar dentes, o objetivo é devolver conforto, saúde e qualidade de vida — sem pressa e sem te fazer sentir como mais um.</p><p class="quote">“Meu paciente não é cliente. Paciente confia, e a gente entrega cuidado, cura e qualidade de vida.”</p><div class="credentials"><span class="credential">Endodontia</span><span class="credential">Ortodontia</span><span class="credential">Implantodontia</span></div></div></div></section>
 
-    <section id="depoimentos" class="trust"><div class="container"><div class="trust-head reveal"><div><span class="eyebrow">Experiências</span><h2>Histórias que voltam a <mark>sorrir.</mark></h2></div><p>Acolhimento, mão leve e resultado que dá orgulho de mostrar.</p></div><div class="testimonials"><article class="testimonial reveal"><div class="stars">★★★★★</div><blockquote>“Meus dentes já são outros, meu sorriso está voltando. Mas a sua empatia como ser humano, isso é irrefutável.”</blockquote><footer><strong>Paciente de reabilitação</strong>Vila Velha · ES</footer></article><article class="testimonial reveal delay-1"><div class="stars">★★★★★</div><blockquote>“Sempre tive medo de dentista. Aqui foi a primeira vez que fiz canal sem sentir dor.”</blockquote><footer><strong>Paciente de endodontia</strong>Centro · Vila Velha</footer></article><article class="testimonial reveal delay-2"><div class="stars">★★★★★</div><blockquote>“Coloquei meu implante e voltei a comer de tudo. Atendimento humano do início ao fim.”</blockquote><footer><strong>Paciente de implante</strong>Vila Velha · ES</footer></article></div></div></section>
+    <section id="depoimentos" class="trust"><div class="container"><div class="trust-head reveal"><div><span class="eyebrow">Experiências</span><h2>Histórias que voltam a <mark>sorrir.</mark></h2></div><p>Acolhimento, mão leve e resultado que dá orgulho de mostrar.</p></div><div class="testimonials"><article class="testimonial reveal"><div class="rating" aria-label="Avaliação de pacientes"></div><blockquote>“Meus dentes já são outros, meu sorriso está voltando. Mas a sua empatia como ser humano, isso é irrefutável.”</blockquote><footer><strong>Paciente de reabilitação</strong>Vila Velha · ES</footer></article><article class="testimonial reveal delay-1"><div class="rating" aria-label="Avaliação de pacientes"></div><blockquote>“Sempre tive medo de dentista. Aqui foi a primeira vez que fiz canal sem sentir dor.”</blockquote><footer><strong>Paciente de endodontia</strong>Centro · Vila Velha</footer></article><article class="testimonial reveal delay-2"><div class="rating" aria-label="Avaliação de pacientes"></div><blockquote>“Coloquei meu implante e voltei a comer de tudo. Atendimento humano do início ao fim.”</blockquote><footer><strong>Paciente de implante</strong>Vila Velha · ES</footer></article></div></div></section>
 
-    <section id="contato" class="contact"><div class="container contact-grid"><div class="reveal"><span class="eyebrow" style="color:#7fe0a5">Contato</span><h2>Vamos cuidar do seu <mark>sorriso.</mark></h2><p class="contact-intro">Mande uma mensagem. A gente responde rapidinho pelo WhatsApp, com atendimento de verdade.</p><div class="contact-details"><div class="contact-detail"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 .1 4.22 2 2 0 0 1 2.1 2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L6.1 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.8 12.8 0 0 0 2.81.7A2 2 0 0 1 20 16.92z"/></svg><div><strong>WhatsApp</strong><span>(27) 99763-1575</span></div></div><div class="contact-detail"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><strong>Onde estamos</strong><span>Av. Henrique Moscoso, 1069 · sala 5<br>Centro, Vila Velha · ES</span></div></div><div class="contact-detail"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong>Atendimento</strong><span>Com hora marcada · segunda a sexta</span></div></div></div></div><form class="contact-form reveal delay-1" id="whatsappForm"><h3>Fale com a clínica</h3><p>Preencha e abrimos o WhatsApp com sua mensagem pronta.</p><div class="field"><label for="nome">Seu nome (opcional)</label><input id="nome" type="text" placeholder="Ex.: Mariana Alves"></div><div class="field"><label for="mensagem">Em que podemos te ajudar?</label><textarea id="mensagem" placeholder="Ex.: Quero fazer uma avaliação de implante."></textarea></div><button class="btn btn-primary" type="submit">Enviar pelo WhatsApp ↗</button></form></div></section>
+    <section id="contato" class="contact"><div class="container contact-grid"><div class="reveal"><span class="eyebrow" style="color:var(--green-dark)">Contato</span><h2>Vamos cuidar do seu <mark>sorriso.</mark></h2><p class="contact-intro">Mande uma mensagem. A gente responde rapidinho pelo WhatsApp, com atendimento de verdade.</p><div class="contact-details"><div class="contact-detail"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 .1 4.22 2 2 0 0 1 2.1 2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L6.1 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.8 12.8 0 0 0 2.81.7A2 2 0 0 1 20 16.92z"/></svg><div><strong>WhatsApp</strong><span>(27) 99763-1575</span></div></div><div class="contact-detail"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><strong>Onde estamos</strong><span>Av. Henrique Moscoso, 1069 · sala 5<br>Centro, Vila Velha · ES</span></div></div><div class="contact-detail"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong>Atendimento</strong><span>Com hora marcada · segunda a sexta</span></div></div></div></div><form class="contact-form reveal delay-1" id="whatsappForm"><h3>Fale com a clínica</h3><p>Preencha e abrimos o WhatsApp com sua mensagem pronta.</p><div class="field"><label for="nome">Seu nome (opcional)</label><input id="nome" type="text" placeholder="Ex.: Mariana Alves"></div><div class="field"><label for="mensagem">Em que podemos te ajudar?</label><textarea id="mensagem" placeholder="Ex.: Quero fazer uma avaliação de implante."></textarea></div><button class="btn btn-primary" type="submit">Enviar pelo WhatsApp</button></form></div></section>
   </main>
 
-  <footer><div class="container"><div class="footer-top"><div><a class="brand" href="#topo"><img src="images/logo-premium-v3.png" alt=""><span class="brand-name" style="color:#fff">Luciana Granado<small style="color:#9cb0a6">Odontologia Integrada</small></span></a><p class="footer-copy">Endodontia, ortodontia e implantes em Vila Velha. Cuidado de verdade, com hora marcada.</p></div><nav class="footer-links" aria-label="Navegação do rodapé"><a href="#tratamentos">Tratamentos</a><a href="#sobre">Sobre</a><a href="#depoimentos">Experiências</a><a href="#contato">Contato</a></nav></div><div class="footer-bottom"><span>© 2026 Luciana Granado · Odontologia Integrada</span><span>CRO-ES 5703 · Vila Velha · ES</span></div></div></footer>
+  <footer><div class="container"><div class="footer-top"><div><a class="brand" href="#topo"><img src="images/logo-premium-v3.png" alt=""><span class="brand-name" style="color:var(--ink)">Luciana Granado<small style="color:var(--muted)">Odontologia Integrada</small></span></a><p class="footer-copy">Endodontia, ortodontia e implantes em Vila Velha. Cuidado de verdade, com hora marcada.</p></div><nav class="footer-links" aria-label="Navegação do rodapé"><a href="#tratamentos">Tratamentos</a><a href="#sobre">Sobre</a><a href="#depoimentos">Experiências</a><a href="#contato">Contato</a></nav></div><div class="footer-bottom"><span>© 2026 Luciana Granado · Odontologia Integrada</span><span>CRO-ES 5703 · Vila Velha · ES</span></div></div></footer>
   <a class="wa-float" href="https://wa.me/5527997631575" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M20.5 3.5A11.8 11.8 0 0 0 12.08 0C5.54 0 .22 5.32.22 11.87c0 2.09.55 4.14 1.59 5.94L.12 24l6.34-1.66a11.87 11.87 0 0 0 5.62 1.43h.01c6.54 0 11.86-5.32 11.86-11.87 0-3.17-1.23-6.14-3.45-8.4Zm-8.42 18.24h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.76.98 1-3.66-.24-.38a9.83 9.83 0 0 1-1.51-5.22c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.03 6.96 2.89a9.8 9.8 0 0 1 2.88 6.96c0 5.43-4.41 9.84-9.83 9.84Zm5.4-7.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51H7.9c-.2 0-.52.08-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z"/></svg></a>
   <script>
     const header = document.getElementById('header');
